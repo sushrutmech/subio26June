@@ -1,0 +1,59 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginRequest } from '../shared/requests/login-request';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { AuthService } from '../appServices/auth.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+
+  loginForm: FormGroup = new FormGroup({});
+  returnUrl!: string;
+  submitted: boolean = false;
+  defauluRedirectURL: string = '/layout/home'
+
+  constructor(private fb: FormBuilder,
+    private spinner: NgxSpinnerService,
+    private authService: AuthService,
+    private router: Router) { }
+
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      // username: ['chris@subio.co.uk', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    console.log("login inn ", this.loginForm.value)
+
+    this.submitted = true;
+
+    this.spinner.show();
+      var params: LoginRequest = {
+        emailAddress: this.loginForm.value.username,
+        password: this.loginForm.value.password
+      };
+
+      this.authService.login(params).subscribe(res => {
+        console.log(res)
+        this.spinner.hide();
+        this.router.navigate([this.defauluRedirectURL]);
+      },
+      err=>{
+        //console.log(err)
+      })
+
+      // console.log("==>" , params)
+
+
+
+  }
+
+}

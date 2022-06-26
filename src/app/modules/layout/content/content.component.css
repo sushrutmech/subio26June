@@ -1,0 +1,434 @@
+.containerImg1 {
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 8px;
+
+    border-radius: 4px;
+}
+
+/* blue barr */
+
+@media (min-width: 1400px) {
+
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .containerImg1 {
+        max-width: 1496px;
+        background: #0198e0;
+    }
+}
+
+.fWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 32px 20px 31px;
+}
+
+.clock {
+    width: 175px;
+    height: 53px;
+    left: 32px;
+    top: 32px;
+
+    background: #ffffff;
+    border-radius: 8px 8px 0px 0px;
+    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 120%;
+    /* identical to box height, or 48px */
+
+
+    /* Red/500 */
+
+    color: #DC3545;
+}
+
+.clock2 {
+    width: 175px;
+    height: 118px;
+    left: 32px;
+    top: 85px;
+
+    background: #ffffff;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.timing {
+    /* position: absolute; */
+    width: 175px;
+    height: 59px;
+    left: 32px;
+    top: 214px;
+
+    border-radius: 8px;
+    margin: 5px 0px -7px 0px;
+}
+
+.days {
+    align-items: center;
+    background: #ffffff;
+    gap: 2px;
+    width: 57px;
+    height: 53px;
+    border-radius: 8px;
+}
+
+/* heading section */
+
+.child2 {
+    position: relative;
+    margin: 0px 0px 0px -1030px;
+}
+
+.heading {
+    position: absolute;
+    width: 373px;
+    height: 38px;
+    left: 0px;
+    /* top: 40px; */
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    color: #ffffff;
+}
+
+.para {
+    position: absolute;
+    width: 867px;
+    height: 58px;
+    left: 0px;
+    top: 45px;
+
+    /* Heading/H4 */
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 00;
+    font-size: 24px;
+    line-height: 120%;
+    /* or 29px */
+
+    /* Gray/200 */
+
+    color: #e9ecef;
+}
+
+.timing1 {
+    position: absolute;
+    width: 229px;
+    height: 58px;
+    left: 0px;
+    top: 121px;
+
+    /* Heading/H4 */
+
+    font-family: "Roboto";
+    font-style: normal;
+    /* font-weight: 500; */
+    font-size: 24px;
+    line-height: 120%;
+    /* or 29px */
+
+    color: #ffc107;
+}
+
+.btnJoin {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 9px;
+    gap: 8px;
+
+    width: 77px;
+    height: 31px;
+    left: 0px;
+    top: 195px;
+
+    /* Theme/Light */
+
+    background: #f8f9fa;
+    border-radius: 3.2px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    /* identical to box height, or 21px */
+
+    text-transform: capitalize;
+
+    /* Subio Primary */
+
+    color: #0198e0;
+}
+
+/* 3rd section .... */
+
+.child3 {
+    position: relative;
+}
+
+.profileImage {
+    width: 175px;
+    height: 168px;
+    left: 1172px;
+    top: 32px;
+
+    background: url(../../../../assets/componnets/profile.jpg);
+    border-radius: 8px;
+    background-color: aqua;
+}
+
+.nameCoach {
+    position: absolute;
+    width: 158px;
+    height: 19px;
+    left: 5px;
+    top: 180px;
+
+    /* Heading/H4 */
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    /* or 29px */
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+.coachHeading {
+    position: absolute;
+    width: 90px;
+    height: 21px;
+    left: 40px;
+    top: 215px;
+
+    /* _Components/Progress/Label */
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    /* or 150% */
+
+    text-align: center;
+
+    /* Gray/200 */
+
+    color: #e9ecef;
+}
+
+/* sarfaraz starting */
+
+.container2 {
+    max-width: 1496px !important;
+    padding-top: 32px;
+    margin-top: 46px;
+    border-top: 2px solid #d4d4d4 !important;
+    padding-bottom: 32px;
+    margin-bottom: 46px;
+    border-bottom: 2px solid #d4d4d4 !important;
+}
+
+.container3 {
+    max-width: 1496px !important;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.container2HeaderText {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 120%;
+    color: #0198e0;
+}
+
+.goalContainer mat-card.mat-card.mat-focus-indicator.ng-star-inserted {
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0px 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    margin-top: 16px !important;
+}
+
+.titleCard {
+    background: #c29ffa;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    padding: 10px;
+}
+
+.progressStatusCard {
+    background: #fff3cd;
+    border-radius: 2px;
+    flex-grow: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    padding: 0px 8px;
+    height: 21px;
+}
+
+.cardGap {
+    gap: 36px;
+    padding: 16px;
+}
+
+::ng-deep .rating {
+    display: block !important;
+    margin-left: -6px !important;
+}
+
+.ratingNumber {
+    margin-left: 2px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.cardPara {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.cardBtn {
+    background-color: #0198e0 !important;
+    color: #e0e7eb !important;
+}
+
+.cardTitle {
+    color: #0198e0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+}
+
+.carousel-cell {
+    width: 316px !important;
+}
+
+.carousel-cell>div {
+    width: 316px !important;
+    border: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+
+.carouselCardRow .mat-card {
+    padding: 0px !important;
+}
+
+.carouselDataContainer {
+    padding: 16px;
+}
+
+.statusBar {
+    background: #fff3cd;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    padding: 2px 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.example-card {
+    position: relative;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timerContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.times {
+    text-align: center;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+}
+
+#calender {
+    text-align: center;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 120%;
+}
+
+.date {
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 120%;
+    text-align: center;
+}
+
+.day {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+}
+
+#time .circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time div {
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-style: 1.5rem;
+}
+
+
+#time .circle svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+#time .circle svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: #191919;
+    stroke-width: 9;
+    transform: translate(5px, 5px);
+}
+
+#time .circle svg circle:nth-child(2) {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+}
+
+/* sarfaraz ending */

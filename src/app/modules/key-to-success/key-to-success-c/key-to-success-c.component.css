@@ -1,0 +1,59 @@
+.goal-item,
+.goal-item-value {
+  padding: 0.3rem 0px;
+}
+
+.goal-item img {
+  width: 25px;
+  height: 25px;
+}
+
+.goal-header {
+  padding: 0.1rem 0px;
+  border-bottom: 1px solid #a5a5a5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.goal-header span {
+  color: #a5a5a5;
+}
+
+.goal-item span {
+  color: #a5a5a5;
+  cursor: pointer;
+}
+
+.goal-item span:hover {
+  text-decoration: underline;
+  text-decoration-color: #a5a5a5;
+}
+
+.goal-item.active span {
+  color: black;
+  text-decoration: underline;
+  cursor: default;
+}
+
+.goal-item-value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.goal-item-value span {
+  color: #a5a5a5;
+  cursor: pointer;
+}
+
+.goal-item-value span:hover {
+  text-decoration: underline;
+  text-decoration-color: #a5a5a5;
+}
+
+.goal-item-value.active span {
+  color: black;
+  text-decoration: underline;
+  cursor: default;
+}

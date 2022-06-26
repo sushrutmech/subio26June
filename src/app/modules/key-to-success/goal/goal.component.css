@@ -1,0 +1,23 @@
+.goal-type-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .goal-type-button img {
+    width: 20px;
+    height: 100%;
+    margin-right: 5px;
+  }
+  
+  .list-group-item.active {
+    z-index: 2;
+    color: #2f5597;
+    background-color: #2f55974d;
+    border-color: #2f55974d;
+  }
+  
+  .img-assessment-man {
+    height: 120px;
+  }
+  
