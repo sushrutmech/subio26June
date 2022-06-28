@@ -43,11 +43,13 @@ export class LoginComponent implements OnInit {
 
       this.authService.login(params).subscribe(res => {
         console.log(res)
+        alert("login successfully......")
         this.spinner.hide();
         this.router.navigate([this.defauluRedirectURL]);
       },
       err=>{
         //console.log(err)
+        alert("invallid credential ......" + err)
       })
 
       // console.log("==>" , params)

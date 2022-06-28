@@ -1,2 +1,51 @@
-<p>assessment works!</p>
+
+
+<div class="row h-100 py-3 animated fadeIn">
+    <div class="col-12">
+      <div class="h-100 d-flex flex-column">
+        <div class="row p-3">
+          <div class="d-flex">
+            <div class="mr-4" *ngIf="selectedSuccessGoal?.icon">
+              <div class="goal-icon-container">
+                <img [src]="selectedSuccessGoal.icon | appImage">
+              </div>
+            </div>
+            <div>
+              <span class="font-xs">SUCCESS GOAL</span>
+              <h2>{{selectedSuccessGoal?.goal}}</h2>
+              <p class="text-justify">
+                {{selectedSuccessGoal?.goalDescription}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="progress-bar">
+            <div class="current-progress" [style.width]="percentage+'%'"></div>
+          </div>
+        </div>
+        <div class="row flex-grow-1">
+          <!-- <app-assessment-form class="container-fluid" [assessmentData]="assessmentData"
+            [successGoal]="selectedSuccessGoal" (onRequestClose)="handleCloseAssessmentForm()"
+            (progressChange)="handleProgressChange($event)"></app-assessment-form> -->
+        <app-assessment-form></app-assessment-form>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 <router-outlet></router-outlet>

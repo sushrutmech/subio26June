@@ -1,4 +1,5 @@
 export interface User {
+  
   userID: number;
   firstName: string;
   lastName: string;
@@ -7,4 +8,5 @@ export interface User {
   contactNumber: number,
   profilePic: string,
   emailAddress: string
+
 }

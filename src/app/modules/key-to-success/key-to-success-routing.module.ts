@@ -5,21 +5,35 @@ import { GoalComponent } from './goal/goal.component';
 import { KeyToSuccessCComponent } from './key-to-success-c/key-to-success-c.component';
 
 const routes: Routes = [
+ 
+  // { path: "", redirectTo: '', pathMatch: "full" },
+  {
+    path: '',
+    component: KeyToSuccessCComponent,
+    
+  },
+  
   {
     path: 'goal',
     component: GoalComponent,
     
   },
   {
+    path: 'goal/:goal-id',
+    component: GoalComponent,
+    data: { state: 'goal:id' }
+  },
+  {
+    path: 'goal/:goal-id/assessment',
+    component: AssessmentComponent,
+    data: { state: 'assessment' }
+  },
+  {
     path: 'assessment',
     component: AssessmentComponent,
     
   },
-  {
-    path: 'key',
-    component: KeyToSuccessCComponent,
-    
-  },
+ 
 ];
 
 @NgModule({

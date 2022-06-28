@@ -5,17 +5,24 @@ import { KeyToSuccessRoutingModule } from './key-to-success-routing.module';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { GoalComponent } from './goal/goal.component';
 import { KeyToSuccessCComponent } from './key-to-success-c/key-to-success-c.component';
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
+import { AppImagePipe } from '../../shared/pipes/app-image-pipe';
+import {ComponentsModule} from '../../shared/components/components.module'
 
 
 @NgModule({
   declarations: [
     AssessmentComponent,
     GoalComponent,
-    KeyToSuccessCComponent
+    KeyToSuccessCComponent,
+    AppImagePipe
   ],
   imports: [
     CommonModule,
-    KeyToSuccessRoutingModule
+    KeyToSuccessRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ComponentsModule
   ]
 })
 export class KeyToSuccessModule { }

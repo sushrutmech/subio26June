@@ -9,19 +9,19 @@ export interface AssessmentQuestion {
 }
 
 export class QuestionList {
-  assessmentID: number;
-  assessmentName: string;
-  questionTypeID: number;
-  assessmentQuestionID: number;
-  questionTypeName: string;
-  questionText: string;
-  maximumText: string;
-  minimumText: string;
-  maximumValue: number;
-  minimumValue: number;
-  valueStep: number;
-  questionWeighting: number;
-  thisOrderNo: number;
+  assessmentID!: number;
+  assessmentName!: string;
+  questionTypeID!: number;
+  assessmentQuestionID!: number;
+  questionTypeName!: string;
+  questionText!: string;
+  maximumText!: string;
+  minimumText!: string;
+  maximumValue!: number;
+  minimumValue!: number;
+  valueStep!: number;
+  questionWeighting!: number;
+  thisOrderNo!: number;
   //Not Mapped
-  selectedValue: number;
+  selectedValue!: number;
 }
