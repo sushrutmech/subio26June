@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Params, RouteConfigLoadStart, Router } from '@angular/router';
+import { ActivatedRoute, Params, RouteConfigLoadStart, Router } from '@angular/router';
 import { AuthService } from 'src/app/appServices/auth.service';
 import { GoalType } from 'src/app/shared/interfaces/goal-type';
 import { SuccessGoal } from 'src/app/shared/interfaces/success-goal';
@@ -24,32 +24,31 @@ export class GoalComponent implements OnInit {
   userSession!: User;
   submitted: boolean = false;
   isNewGoal: boolean = false;
-
+  Id:any;
   constructor(
     private router: Router,
     private authService: AuthService,
     private myKeysToSuccessService: KeyToSuccessService,
     private fb: FormBuilder,
     private spinner: NgxSpinnerService,
-
+    private route: ActivatedRoute
   ) {
     this.userSession = this.authService.userSession.user;
-
   }
-
+  
   ngOnInit(): void {
-
+    this.Id = this.route.snapshot.params
+    this.selectedSuccessGoalId = this.Id['goal-id'];
     this.goalForm = this.fb.group({
       userSuccessID: [0, Validators.required],
       userId: [this.userSession.userID, Validators.required],
       successGoalTypeID: [0],
       goal: ['', Validators.required],
       goalDesc: ['']
-
     })
     //this.getGoalTypeList(() => this.checkUrlAndData());
     this.getGoalTypeList()
-
+    this.getSuccessGoalBySelectedGoalId()
   }
 
   getGoalTypeList() {
@@ -94,6 +93,7 @@ export class GoalComponent implements OnInit {
   getSuccessGoalBySelectedGoalId() {
     this.spinner.show();
     this.myKeysToSuccessService.getGoalDetailsByID(this.selectedSuccessGoalId).subscribe(result => {
+      console.log(result);
       this.selectedSuccessGoal = result;
       this.onGoalTypeClick(this.goalTypeList.find(x => x.successGoalTypeID === this.selectedSuccessGoal.successGoalTypeId))
       this.patchFormValue();

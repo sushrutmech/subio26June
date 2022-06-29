@@ -1,68 +1,71 @@
-<div class="animated fadeIn full-height py-3" *ngIf="isDataLoaded">
-  <div class="row" *ngIf="selectedSuccessGoal">
-    <div class="col-lg-12 col-md-12 col-xl-8">
-       <app-success-key-chart [userSuccessID]="selectedSuccessGoal.userSuccessID"></app-success-key-chart> 
+<section class="container">
+  <div class="animated fadeIn full-height py-3" *ngIf="isDataLoaded">
+    <div class="row" *ngIf="selectedSuccessGoal">
+      <div class="col-lg-12 col-md-12 col-xl-8">
+         <app-success-key-chart [userSuccessID]="selectedSuccessGoal.userSuccessID"></app-success-key-chart> 
+      </div>
+      <div class="col-lg-12 col-md-12 col-xl-4">
+        <div class="row" *ngIf="selectedSuccessGoal">
+          <div class="col-md-12">
+            <span class="font-xs">SUCCESS GOAL</span>
+            <h2>{{selectedSuccessGoal.goal}}</h2>
+            <p class="text-justify">
+              {{selectedSuccessGoal.goalDescription}}
+            </p>
+          </div>
+          <div class="col-md-12 d-flex flex-row justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <i class="fa fa-calendar fa-2x mr-2 text-muted"></i>
+              <span class="text-muted">
+                Last assessed: {{selectedSuccessGoal.lastAssessmentTaken | date : 'dd/MM/YYYY hh:mma'}}
+              </span>
+            </div>
+            <div class="align-items-center text-center">
+              <button class="btn btn-outline-primary btn-sm" [routerLink]="['goal', selectedSuccessGoal.userSuccessID]"
+                [state]="{goal_data: selectedSuccessGoal}">Re-assess this goal</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-lg-12 col-md-12 col-xl-4">
-      <div class="row" *ngIf="selectedSuccessGoal">
-        <div class="col-md-12">
-          <span class="font-xs">SUCCESS GOAL</span>
-          <h2>{{selectedSuccessGoal.goal}}</h2>
-          <p class="text-justify">
-            {{selectedSuccessGoal.goalDescription}}
-          </p>
-        </div>
-        <div class="col-md-12 d-flex flex-row justify-content-between align-items-center">
-          <div class="d-flex align-items-center">
-            <i class="fa fa-calendar fa-2x mr-2 text-muted"></i>
-            <span class="text-muted">
-              Last assessed: {{selectedSuccessGoal.lastAssessmentTaken | date : 'dd/MM/YYYY hh:mma'}}
-            </span>
+    <div class="row">
+      <div class="col-md-8 my-3" *ngIf="successGoalList.length > 0">
+        <div class="row">
+          <div class="col-8">
+            <div class="goal-header">
+              <span>Success Goal</span>
+            </div>
           </div>
-          <div class="align-items-center text-center">
-            <button class="btn btn-outline-primary btn-sm" [routerLink]="['goal', selectedSuccessGoal.userSuccessID]"
-              [state]="{goal_data: selectedSuccessGoal}">Re-assess this goal</button>
+          <div class="col-4">
+            <div class="goal-header">
+              <span>Last assessment</span>
+            </div>
           </div>
         </div>
+        <div class="row" *ngFor="let item of successGoalList">
+          <div class="col-8">
+            <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
+              (click)="setSuccessGoal(item)">
+              <img [src]="item.icon " *ngIf="item.icon" class="mr-1" />
+              <span>{{item.goal}}</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="goal-item-value" [class.active]="item === selectedSuccessGoal" (click)="setSuccessGoal(item)">
+              <span>{{item.dateTakenDescription}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button class="btn btn-outline-primary btn-sm" routerLink="/key-to-success/goal">
+          <i class="fa fa-crosshairs"></i>
+          Add a new goal
+        </button>
+      </div>
+      <div class="col-md-4">
+  
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-8 my-3" *ngIf="successGoalList.length > 0">
-      <div class="row">
-        <div class="col-8">
-          <div class="goal-header">
-            <span>Success Goal</span>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="goal-header">
-            <span>Last assessment</span>
-          </div>
-        </div>
-      </div>
-      <div class="row" *ngFor="let item of successGoalList">
-        <div class="col-8">
-          <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
-            (click)="setSuccessGoal(item)">
-            <img [src]="item.icon " *ngIf="item.icon" class="mr-1" />
-            <span>{{item.goal}}</span>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="goal-item-value" [class.active]="item === selectedSuccessGoal" (click)="setSuccessGoal(item)">
-            <span>{{item.dateTakenDescription}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12">
-      <button class="btn btn-outline-primary btn-sm" routerLink="/key-to-success/goal">
-        <i class="fa fa-crosshairs"></i>
-        Add a new goal
-      </button>
-    </div>
-    <div class="col-md-4"></div>
-  </div>
-</div>
-
+</section>

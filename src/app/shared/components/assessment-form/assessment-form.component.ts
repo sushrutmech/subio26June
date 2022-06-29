@@ -4,6 +4,7 @@ import { SuccessGoal } from '../../interfaces/success-goal';
 import { AssessmentRequest } from '../../requests/assessment-request';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { KeyToSuccessService } from '../../../modules/key-to-success/key-to-success.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-assessment-form',
@@ -33,7 +34,8 @@ export class AssessmentFormComponent implements OnInit {
 
   constructor(
     private myKeysToSuccessService: KeyToSuccessService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private route:Router
   ) { }
 
   ngOnInit(): void {
@@ -219,6 +221,7 @@ export class AssessmentFormComponent implements OnInit {
 
   onShowMeMyKeyClick() {
     this.onRequestClose.emit();
+    this.route.navigate(['/key-to-success'])
   }
 
 
