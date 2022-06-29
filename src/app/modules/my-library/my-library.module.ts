@@ -6,6 +6,7 @@ import { MyLibraryComponent } from './my-library/my-library.component';
 
 import { RatingModule } from 'ng-starrating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComponentsModule  } from '../../shared/components/components.module'
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     FormsModule,
     ReactiveFormsModule,
+    ComponentsModule
   ]
 })
 export class MyLibraryModule { }

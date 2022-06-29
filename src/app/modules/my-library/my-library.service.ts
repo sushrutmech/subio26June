@@ -50,6 +50,9 @@ export class MyLibraryService {
     return this.http.post<any>(`${environment.apiEndPoint}/Library/AddRating?UserID=${this.userSession.userID}&ContentID=${contentId}&Rating=${rating}&review=${review}`, {});    
   }
 
+  markContentAsRead(contentId:any) {
+    return this.http.post<any>(`${environment.apiEndPoint}/Library/AddToReadList?UserID=${this.userSession.userID}&ContentID=${contentId}`, {});
+  }
 
 
 

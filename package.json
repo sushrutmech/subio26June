@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@videogular/ngx-videogular": "^5.0.1",
     "angular-bootstrap": "^0.12.2",
     "angular-responsive-carousel": "^2.1.2",
     "angular-star-rating": "^5.1.0",
@@ -28,11 +29,13 @@
     "ng-starrating": "^1.0.20",
     "ng2-charts": "^3.0.11",
     "ngx-bootstrap": "^8.0.0",
+    "ngx-extended-pdf-viewer": "^14.0.4",
     "ngx-pagination": "^6.0.2",
     "ngx-perfect-scrollbar": "^10.1.1",
     "ngx-spinner": "^13.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "videogular": "^2.2.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
