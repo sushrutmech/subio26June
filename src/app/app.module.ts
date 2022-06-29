@@ -11,6 +11,9 @@ import { AngularMaterialModule } from './angularMaterialComponents/angular-mater
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";
+
+
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     P400Component,
+    
+    
     
    
   ],
@@ -29,7 +34,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+
+    
+    
+  ],
+
+  exports: [
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

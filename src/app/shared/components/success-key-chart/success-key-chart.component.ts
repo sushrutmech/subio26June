@@ -6,7 +6,7 @@ import { SuccessKey } from "../../../shared/interfaces/success-key"
 @Component({
   selector: 'app-success-key-chart',
   templateUrl: './success-key-chart.component.html',
-  styleUrls: ['./success-key-chart.component.css']
+  styleUrls: ['./success-key-chart.component.scss']
 })
 export class SuccessKeyChartComponent implements OnInit {
 
