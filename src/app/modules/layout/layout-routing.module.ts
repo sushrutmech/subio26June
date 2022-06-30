@@ -6,6 +6,7 @@ const routes: Routes = [
   {
     path: 'home',
     component:LayoutComponentComponent,
+    data: { state: 'home' }
     
   }
   

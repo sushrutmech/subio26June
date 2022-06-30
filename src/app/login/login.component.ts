@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginRequest } from '../shared/requests/login-request';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from '../appServices/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,23 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup = new FormGroup({});
-  returnUrl!: string;
+  returnUrl: string = "";
   submitted: boolean = false;
   defauluRedirectURL: string = '/layout/home'
 
   constructor(private fb: FormBuilder,
     private spinner: NgxSpinnerService,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute,) {
+    if (this.authService.userSession) {
+      this.router.navigate([this.defauluRedirectURL]);
+    }
+    console.log(this.returnUrl)
+    this.authService.userSession
+
+  }
+
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -28,6 +38,8 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || this.defauluRedirectURL;
   }
 
   onSubmit() {
@@ -36,24 +48,25 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     this.spinner.show();
-      var params: LoginRequest = {
-        emailAddress: this.loginForm.value.username,
-        password: this.loginForm.value.password
-      };
+    var params: LoginRequest = {
+      emailAddress: this.loginForm.value.username,
+      password: this.loginForm.value.password
+    };
 
-      this.authService.login(params).subscribe(res => {
-        console.log(res)
-        alert("login successfully......")
-        this.spinner.hide();
-        this.router.navigate([this.defauluRedirectURL]);
-      },
-      err=>{
-        //console.log(err)
-        alert("invallid credential ......" + err)
-      })
+    this.authService.login(params).subscribe({next:(res:any)=>{
+      alert("lonin sucessfully....")
+      this.spinner.hide();
+      this.router.navigate([this.returnUrl]);
+     
+    },
+    error:err => {
+      //console.log(err)
+      alert("invallid credential ......" + err)
+    }
 
-      // console.log("==>" , params)
 
+  })
+    
 
 
   }

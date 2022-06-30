@@ -12,17 +12,22 @@ import { LoginRequest } from '../shared/requests/login-request';
 })
 export class AuthService {
 
+  //private currentUserSession: BehaviorSubject<>;
+   nulll!:any
+
   private currentUserSession: BehaviorSubject<LoginResponse>;
 
-  app_session_name:string = '_session.subio.CU';
+  app_session_name: string = '_session.subio.CU';
+  //currentUserSession = new BehaviorSubject(null)
 
 
   constructor(private http: HttpClient) {
-    let dataLocal:any = localStorage.getItem(this.app_session_name)
+    let dataLocal: any = localStorage.getItem(this.app_session_name)
     let dataJoson = JSON.parse(dataLocal)
+    //this.currentUserSession.next(dataJoson)
     this.currentUserSession = new BehaviorSubject<LoginResponse|any>(dataJoson)
-   
-  
+
+
   }
 
   //sign up method
@@ -32,7 +37,7 @@ export class AuthService {
   }
 
   //session getter.......
-  public get userSession(): LoginResponse {
+  public get userSession(): any {
     return this.currentUserSession.value;
   }
 
@@ -47,7 +52,7 @@ export class AuthService {
 
   }
 
-  userData(params:LoginRequest){
+  userData(params: LoginRequest) {
     return this.login(params).pipe()
   }
 
@@ -55,7 +60,7 @@ export class AuthService {
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem(this.app_session_name);
-    //this.currentUserSession.next(null);
+    this.currentUserSession.next(this.nulll);
   }
 
 
