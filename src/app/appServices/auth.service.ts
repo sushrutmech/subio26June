@@ -4,7 +4,9 @@ import { BehaviorSubject, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { app_session_name } from '../shared/constants/app.constants';
 import { LoginResponse } from '../shared/interfaces/authenticate';
+import { ChangePasswordRequest } from '../shared/interfaces/change-password.request';
 import { RegisterUserRequest } from '../shared/interfaces/register-user.request';
+import { User } from '../shared/interfaces/user';
 import { LoginRequest } from '../shared/requests/login-request';
 
 @Injectable({
@@ -61,6 +63,23 @@ export class AuthService {
     // remove user from local storage to log user out
     localStorage.removeItem(this.app_session_name);
     this.currentUserSession.next(this.nulll);
+  }
+
+  updateProfile(params: User) {
+    return this.http.post<number>(`${environment.apiEndPoint}/auth/updateUser`, params)
+      .pipe(map(response => {
+        var newSession = this.userSession;
+        newSession.user.firstName = params.firstName;
+        newSession.user.lastName = params.lastName;
+        newSession.user.userID = params.userID;
+        localStorage.setItem(app_session_name, JSON.stringify(newSession));
+        this.currentUserSession.next(newSession);
+      }));
+  }
+
+  changePassword(params: ChangePasswordRequest) {
+    let url = `${environment.apiEndPoint}/auth/changepassword?user_id=${params.user_id}&oldpassword=${params.oldpassword}&newpassword=${params.newpassword}`
+    return this.http.post<number>(url, null);
   }
 
 
