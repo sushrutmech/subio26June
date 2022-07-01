@@ -1,6 +1,7 @@
 
 
-<div class="navbar">
+
+<div class="navbar" *ngIf="currentUser">
   
      
     <div class="flexWrap">
@@ -73,3 +74,5 @@
     </div>
 
 </div>
+
+<router-outlet></router-outlet>

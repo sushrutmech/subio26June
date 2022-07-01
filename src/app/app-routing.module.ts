@@ -42,6 +42,7 @@ const routes: Routes = [
 
   {
     path:'change-passwoord',
+    canActivate: [AuthGuard],
     loadChildren:()=>import('./modules/change-password/change-password.module')
     .then(mod=>mod.ChangePasswordModule)
   },

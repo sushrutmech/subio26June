@@ -10,6 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  currentUser:any;
 
   constructor(
     private AuthService:AuthService,
@@ -19,12 +20,19 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
+    let dataLocal: any = localStorage.getItem('_session.subio.CU')
+     this.currentUser = JSON.parse(dataLocal)
+    
   }
+
+  
 
   onPressSignOut(){
     alert("sing out call ")
     this.AuthService.logout()
     this.router.navigate(['/login'])
+    location.reload()
 
   }
 

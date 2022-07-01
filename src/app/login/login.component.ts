@@ -57,11 +57,13 @@ export class LoginComponent implements OnInit {
       alert("lonin sucessfully....")
       this.spinner.hide();
       this.router.navigate([this.returnUrl]);
+      location.reload()
      
     },
     error:err => {
       //console.log(err)
       alert("invallid credential ......" + err)
+      this.spinner.hide();
     }
 
 

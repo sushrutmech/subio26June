@@ -69,6 +69,7 @@ export class RegisterComponent implements OnInit {
       },err=>{
         console.log(err)
         alert(err.errorMessage)
+        this.spinner.hide();
       });
     }
 

@@ -23,6 +23,15 @@ import {ComponentsModule} from '../../shared/components/components.module'
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule
+  ],
+  exports:[
+    KeyToSuccessCComponent,
+    AssessmentComponent,
+    GoalComponent,
+    AppImagePipe
+
+    
+
   ]
 })
 export class KeyToSuccessModule { }

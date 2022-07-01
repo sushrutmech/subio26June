@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { SuccessGoal } from 'src/app/shared/interfaces/success-goal';
+import { KeyToSuccessService } from '../../key-to-success/key-to-success.service';
 
 @Component({
   selector: 'app-content',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  isDataLoaded: boolean = false;
+  successGoalList: SuccessGoal[] = [];
+  selectedSuccessGoal!: SuccessGoal;
+
+  constructor(
+    
+  ) { 
+  
+  }
 
   ngOnInit(): void {
   }
+
+ 
+
 
 }
