@@ -3,6 +3,7 @@ import { SuccessGoal } from 'src/app/shared/interfaces/success-goal';
 import { KeyToSuccessService } from 'src/app/modules/key-to-success/key-to-success.service'
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/appServices/auth.service';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class KeyToSuccessCComponent implements OnInit {
   isDataLoaded: boolean = false;
   successGoalList: SuccessGoal[] = [];
   selectedSuccessGoal!: SuccessGoal;
+  keyId$ = new Subject();
 
   constructor(
     private myKeysToSuccessService: KeyToSuccessService,
@@ -32,17 +34,21 @@ export class KeyToSuccessCComponent implements OnInit {
   getSuccessGoalList() {
     this.spinner.show();
     this.myKeysToSuccessService.getGoalList().subscribe(results => {
+      // console.log(results);
       if (results.length > 0) {
         this.successGoalList = results;
         this.selectedSuccessGoal = this.successGoalList[0];
+        this.keyId$.next(this.successGoalList[0]);
       }
       this.isDataLoaded = true;
       this.spinner.hide();
     });
+    
   }
 
   setSuccessGoal(item: SuccessGoal) {
     this.selectedSuccessGoal = item;
+    this.keyId$.next(item.userSuccessID)
   }
 
 }

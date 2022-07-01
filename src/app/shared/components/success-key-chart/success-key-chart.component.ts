@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { KeyToSuccessCComponent } from 'src/app/modules/key-to-success/key-to-success-c/key-to-success-c.component';
 import { KeyToSuccessService } from '../../../modules/key-to-success/key-to-success.service'
 import { SuccessKey } from "../../../shared/interfaces/success-key"
 
@@ -11,8 +12,11 @@ import { SuccessKey } from "../../../shared/interfaces/success-key"
 export class SuccessKeyChartComponent implements OnInit {
 
   @Input() userSuccessID!: number;
+  @Input() keyId!: number;
+  id: number = 304;
   isDataLoaded: boolean = false;
   keyData:any  = [];
+  keyDataArray:any  = [];
 
   
   keySlide1!: any;
@@ -28,16 +32,26 @@ export class SuccessKeyChartComponent implements OnInit {
   constructor(
     private myKeysToSuccessService:KeyToSuccessService ,
     private spinner: NgxSpinnerService,
-  ) { }
-
-  ngOnInit(): void {
-  //key Starts
+    private keyid:KeyToSuccessCComponent,
+  ) { 
+    this.myKeysToSuccessService.getSuccessKeyData(this.id).subscribe(results => {
+      console.log(results)
+      this.keyDataArray = results
+    });
+  }
+  
+  getChangeData(ids:any){
+    this.myKeysToSuccessService.getSuccessKeyData(ids).subscribe(results => {
+      // console.log(results)
+      this.keyDataArray = results
+      console.log(this.keyDataArray[2].previousScore)
+    });
 
     // circle1
     let sec = document.getElementById('seconds')
     let ss = document.getElementById('ss')
     let indicator1 = document.getElementById('circleIndicator')
-    let s = 50;
+    let s = this.keyDataArray[0].previousScore;
     
     sec!.innerHTML = String(s);
 
@@ -49,7 +63,7 @@ export class SuccessKeyChartComponent implements OnInit {
     let sec1 = document.getElementById('seconds1')
     let ss1 = document.getElementById('ss1')
     let indicator2 = document.getElementById('circle1Indicator')
-    let s1 = 50;
+    let s1 = this.keyDataArray[1].previousScore;
     
     sec1!.innerHTML = String(s1)
     
@@ -61,7 +75,7 @@ export class SuccessKeyChartComponent implements OnInit {
     let sec2 = document.getElementById('seconds2')
     let ss2 = document.getElementById('ss2')
     let indicator3 = document.getElementById('circle2Indicator')
-    let s2 = 50;
+    let s2 = this.keyDataArray[2].previousScore;
     
     sec2!.innerHTML = String(s2)
     
@@ -73,7 +87,7 @@ export class SuccessKeyChartComponent implements OnInit {
     let sec3 = document.getElementById('seconds3')
     let ss3 = document.getElementById('ss3')
     let indicator4 = document.getElementById('circle3Indicator')
-    let s3 = 50;
+    let s3 =this.keyDataArray[3].previousScore;
     
     sec3!.innerHTML = String(s3)
     
@@ -85,7 +99,7 @@ export class SuccessKeyChartComponent implements OnInit {
     let sec4 = document.getElementById('seconds4')
     let ss4 = document.getElementById('ss4')
     let indicator5 = document.getElementById('circle4Indicator')
-    let s4 = 50;
+    let s4 = this.keyDataArray[4].previousScore;
     
     sec4!.innerHTML = String(s4)
     
@@ -97,7 +111,7 @@ export class SuccessKeyChartComponent implements OnInit {
     let sec5 = document.getElementById('seconds5')
     let ss5 = document.getElementById('ss5')
     let indicator6 = document.getElementById('circle5Indicator')
-    let s5 = 50;
+    let s5 = this.keyDataArray[5].previousScore;
     
     sec5!.innerHTML = String(s5)
     
@@ -109,7 +123,7 @@ export class SuccessKeyChartComponent implements OnInit {
     let sec6 = document.getElementById('seconds6')
     let ss6 = document.getElementById('ss6')
     let indicator7 = document.getElementById('circle6Indicator')
-    let s6 = 50;
+    let s6 = this.keyDataArray[6].previousScore;
     
     sec6!.innerHTML = String(s6)
     
@@ -122,7 +136,7 @@ export class SuccessKeyChartComponent implements OnInit {
     let sec7 = document.getElementById('seconds7')
     let ss7 = document.getElementById('ss7')
     let indicator8 = document.getElementById('circle7Indicator')
-    let s7 = 50;
+    let s7 = this.keyDataArray[7].previousScore;
     
     sec7!.innerHTML = String(s7)
     
@@ -134,7 +148,7 @@ export class SuccessKeyChartComponent implements OnInit {
     let sec8 = document.getElementById('seconds8')
     let ss8 = document.getElementById('ss8')
     let indicator9 = document.getElementById('circle8Indicator')
-    let s8 = 50;
+    let s8 = this.keyDataArray[8].previousScore;
     
     sec8!.innerHTML = String(s8)
     
@@ -156,6 +170,18 @@ export class SuccessKeyChartComponent implements OnInit {
 
 
     //ends Key
+  }
+
+  ngOnInit(): void {
+    //key Starts
+    this.keyid.keyId$ .subscribe((res :any)=>{
+      // console.log(res)
+      this.id= res;
+      this.getChangeData(this.id)
+    })
+    
+    // console.log(this.keyDataArray[0].previousScore)
+    
   }
 
   ngOnChanges(changes:any): void {
