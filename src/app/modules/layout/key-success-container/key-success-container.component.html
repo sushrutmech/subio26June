@@ -1,128 +1,167 @@
-
-
-
 <div class="myGoalContainer d-flex justify-content-between">
-    <div class="container2HeaderText">
-      MY GOALS
-    </div>
-    <div>
-      <button mat-raised-button color="primary" routerLink="/key-to-success/">Add New Goal </button>
-    </div>
+  <div class="container2HeaderText">
+    MY GOALS
   </div>
+  <div>
+    <button mat-raised-button color="primary" routerLink="/key-to-success/">Add New Goal </button>
+  </div>
+</div>
 
 <div class="container">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
-    <div class="goalContainer">
-        <mat-tab-group>
-          <mat-tab label="All Goals">
-            <app-key-to-success-c></app-key-to-success-c>
-            <!-- <app-goal></app-goal>
+  <div class="goalContainer">
+    <mat-tab-group>
+      <mat-tab label="All Goals">
+        <app-key-to-success-c></app-key-to-success-c>
+        <!-- <app-goal></app-goal>
             <app-assessment></app-assessment> -->
-            <mat-card>
-              <mat-card-title class="d-flex justify-content-between">
-                <div class="d-flex gap-1">
-                  <div class="titleCard">
-                    My Goals
+        <mat-card>
+          <mat-card-title class="d-flex justify-content-between">
+            <div class="d-flex gap-1">
+              <div class="titleCard">
+                My Goals
+
+              </div>
+
+              <div class="allGoalList" *ngIf="isDataLoaded">
+
+                <div class="col-md-8 my-3" *ngIf="successGoalList.length > 0">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="goal-header">
+                        <span>Success Goal</span>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="goal-header">
+                        <span>Last assessment</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="progressStatusCard">
-                    In Progress
-                  </div>
-                </div>
-                <div>
-                  <img src="../../../assets/images/Vector.svg" alt="" srcset="">
-                </div>
-              </mat-card-title>
-              <mat-card-subtitle class="titleText">
-                Deliver customer service and support with an 85 percent or higher satisfaction rating.
-              </mat-card-subtitle>
-            </mat-card>
-            <mat-card>
-              <mat-card-title class="d-flex justify-content-between">
-                <div class="d-flex gap-1">
-                  <div class="titleCard">
-                    My Goals
-                  </div>
-                  <div class="progressStatusCard">
-                    In Progress
-                  </div>
-                </div>
-                <div>
-                  <img src="../../../assets/images/Vector.svg" alt="" srcset="">
-                </div>
-              </mat-card-title>
-              <mat-card-subtitle class="titleText">
-                Deliver customer service and support with an 85 percent or higher satisfaction rating.
-              </mat-card-subtitle>
-            </mat-card>
-          </mat-tab>
-          <mat-tab label="MyGoals">
-            <mat-card>
-              <mat-card-title class="d-flex justify-content-between">
-                <div class="d-flex gap-1">
-                  <div class="titleCard">
-                    My Goals
-                  </div>
-                  <div class="progressStatusCard">
-                    In Progress
+                  <div class="row" *ngFor="let item of successGoalList">
+                    <div class="col-8">
+                      <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
+                        (click)="setSuccessGoal(item)">
+                        <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
+                        <span>{{item.goal}}</span>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="goal-item-value" [class.active]="item === selectedSuccessGoal"
+                        (click)="setSuccessGoal(item)">
+                        <span>{{item.dateTakenDescription}}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
-                </div>
-              </mat-card-title>
-              <mat-card-subtitle class="titleText">
-                Deliver customer service and support with an 85 percent or higher satisfaction rating.
-              </mat-card-subtitle>
-            </mat-card>
-          </mat-tab>
-          <mat-tab label="My Team Goals">
-            <mat-card>
-              <mat-card-title class="d-flex justify-content-between">
-                <div class="d-flex gap-1">
-                  <div class="titleCard">
-                    My Goals
-                  </div>
-                  <div class="progressStatusCard">
-                    In Progress
-                  </div>
-                </div>
-                <div>
-                  <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
-                </div>
-              </mat-card-title>
-              <mat-card-subtitle class="titleText">
-                Deliver customer service and support with an 85 percent or higher satisfaction rating.
-              </mat-card-subtitle>
-            </mat-card>
-          </mat-tab>
-          <mat-tab label="My Personal Goals">
-            <mat-card>
-              <mat-card-title class="d-flex justify-content-between">
-                <div class="d-flex gap-1">
-                  <div class="titleCard">
-                    My Goals
-                  </div>
-                  <div class="progressStatusCard">
-                    In Progress
-                  </div>
-                </div>
-                <div>
-                  <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
-                </div>
-              </mat-card-title>
-              <mat-card-subtitle class="titleText">
-                Deliver customer service and support with an 85 percent or higher satisfaction rating.
-              </mat-card-subtitle>
-            </mat-card>
-          </mat-tab>
-        </mat-tab-group>
-      </div>
 
 
-    <button mat-raised-button color="primary" routerLink="/key-to-success/">Add New Goal </button>
+              </div>
 
-   
+
+
+
+
+
+
+              <div class="progressStatusCard">
+                In Progress
+              </div>
+            </div>
+            <div>
+              <img src="../../../assets/images/Vector.svg" alt="" srcset="">
+            </div>
+          </mat-card-title>
+          <mat-card-subtitle class="titleText">
+            Deliver customer service and support with an 85 percent or higher satisfaction rating.
+          </mat-card-subtitle>
+        </mat-card>
+        <mat-card>
+          <mat-card-title class="d-flex justify-content-between">
+            <div class="d-flex gap-1">
+              <div class="titleCard">
+                My Goals
+              </div>
+              <div class="progressStatusCard">
+                In Progress
+              </div>
+            </div>
+            <div>
+              <img src="../../../assets/images/Vector.svg" alt="" srcset="">
+            </div>
+          </mat-card-title>
+          <mat-card-subtitle class="titleText">
+            Deliver customer service and support with an 85 percent or higher satisfaction rating.
+          </mat-card-subtitle>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="MyGoals">
+        <mat-card>
+          <mat-card-title class="d-flex justify-content-between">
+            <div class="d-flex gap-1">
+              <div class="titleCard">
+                My Goals
+              </div>
+              <div class="progressStatusCard">
+                In Progress
+              </div>
+            </div>
+            <div>
+              <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
+            </div>
+          </mat-card-title>
+          <mat-card-subtitle class="titleText">
+            Deliver customer service and support with an 85 percent or higher satisfaction rating.
+          </mat-card-subtitle>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="My Team Goals">
+        <mat-card>
+          <mat-card-title class="d-flex justify-content-between">
+            <div class="d-flex gap-1">
+              <div class="titleCard">
+                My Goals
+              </div>
+              <div class="progressStatusCard">
+                In Progress
+              </div>
+            </div>
+            <div>
+              <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
+            </div>
+          </mat-card-title>
+          <mat-card-subtitle class="titleText">
+            Deliver customer service and support with an 85 percent or higher satisfaction rating.
+          </mat-card-subtitle>
+        </mat-card>
+      </mat-tab>
+      <mat-tab label="My Personal Goals">
+        <mat-card>
+          <mat-card-title class="d-flex justify-content-between">
+            <div class="d-flex gap-1">
+              <div class="titleCard">
+                My Goals
+              </div>
+              <div class="progressStatusCard">
+                In Progress
+              </div>
+            </div>
+            <div>
+              <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
+            </div>
+          </mat-card-title>
+          <mat-card-subtitle class="titleText">
+            Deliver customer service and support with an 85 percent or higher satisfaction rating.
+          </mat-card-subtitle>
+        </mat-card>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+
+  <button mat-raised-button color="primary" routerLink="/key-to-success/">Add New Goal </button>
+
+
 
 </div>
-   

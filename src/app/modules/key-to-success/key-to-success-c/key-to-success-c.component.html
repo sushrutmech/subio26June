@@ -49,7 +49,7 @@
           <div class="col-8">
             <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
               (click)="setSuccessGoal(item)">
-              <img [src]="item.icon " *ngIf="item.icon" class="mr-1" />
+              <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
               <span>{{item.goal}}</span>
             </div>
           </div>

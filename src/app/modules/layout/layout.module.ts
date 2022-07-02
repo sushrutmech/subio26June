@@ -12,6 +12,8 @@ import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 import { KeySuccessContainerComponent } from './key-success-container/key-success-container.component';
 import { KeyToSuccessModule } from '../key-to-success/key-to-success.module';
+import { MyLibraryContainerComponent } from './my-library-container/my-library-container.component';
+import { MyLibraryModule } from '../my-library/my-library.module';
 
 
 
@@ -25,6 +27,7 @@ import { KeyToSuccessModule } from '../key-to-success/key-to-success.module';
     ContentComponent,
     LayoutComponentComponent,
     KeySuccessContainerComponent,
+    MyLibraryContainerComponent,
     
   ],
   imports: [
@@ -34,7 +37,8 @@ import { KeyToSuccessModule } from '../key-to-success/key-to-success.module';
     StarRatingModule.forRoot(),
     LayoutRoutingModule,
     ComponentsModule,
-    KeyToSuccessModule
+    KeyToSuccessModule,
+    MyLibraryModule
     
   ],
   exports: [

@@ -29,7 +29,7 @@ export class SuccessKeyLockComponent implements OnInit {
     private myKeysToSuccessService: KeyToSuccessService,
     private spinner: NgxSpinnerService,
   ) {
-    this.mapLockData()
+    //this.mapLockData()
   }
 
   ngOnInit(): void {
@@ -59,7 +59,7 @@ export class SuccessKeyLockComponent implements OnInit {
       this.isDataLoaded = true;
       return;
     }
-    console.log("***" , this.keyData)
+    //console.log("***" , this.keyData)
 
     
       //key Starts

@@ -64,6 +64,8 @@ export class SuccessKeyChartComponent implements OnInit {
     this.keySlide7 = this.keyData.find((x:any) => x.orderNo === 7);
     this.keySlide8 = this.keyData.find((x:any) => x.orderNo === 8);
     this.keySlide9 = this.keyData.find((x:any) => x.orderNo === 9);
+
+    
     this.spinner.hide('assessment-key-chart');
     this.isDataLoaded = true;
   }

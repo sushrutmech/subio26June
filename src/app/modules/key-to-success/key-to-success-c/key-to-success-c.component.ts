@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/appServices/auth.service';
   styleUrls: ['./key-to-success-c.component.css']
 })
 export class KeyToSuccessCComponent implements OnInit {
+  [x: string]: any;
 
   isDataLoaded: boolean = false;
   successGoalList: SuccessGoal[] = [];
@@ -21,7 +22,7 @@ export class KeyToSuccessCComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private auth:AuthService
   ) {
-     console.log("keyto c is loaded" ,this.myKeysToSuccessService.getGoalList())
+    // console.log("keyto c is loaded" ,this.myKeysToSuccessService.getGoalList())
      
     }
 

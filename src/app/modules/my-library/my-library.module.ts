@@ -21,6 +21,9 @@ import { ComponentsModule  } from '../../shared/components/components.module'
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule
+  ],
+  exports:[
+    MyLibraryComponent
   ]
 })
 export class MyLibraryModule { }
