@@ -15,12 +15,14 @@ import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     P400Component,
+    
     
     
     

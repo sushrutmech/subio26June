@@ -14,6 +14,7 @@ import { KeySuccessContainerComponent } from './key-success-container/key-succes
 import { KeyToSuccessModule } from '../key-to-success/key-to-success.module';
 import { MyLibraryContainerComponent } from './my-library-container/my-library-container.component';
 import { MyLibraryModule } from '../my-library/my-library.module';
+import { CarouselContainerComponent } from './carousel-container/carousel-container.component';
 
 
 
@@ -28,6 +29,7 @@ import { MyLibraryModule } from '../my-library/my-library.module';
     LayoutComponentComponent,
     KeySuccessContainerComponent,
     MyLibraryContainerComponent,
+    CarouselContainerComponent,
     
   ],
   imports: [
