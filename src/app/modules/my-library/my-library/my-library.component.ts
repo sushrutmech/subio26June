@@ -41,6 +41,10 @@ export class MyLibraryComponent implements OnInit {
       excludeSwitch: false
     })
     this.getAllContent();
+    console.log("**//++--" , 
+     this.myLibraryService.getContentList().subscribe(result => {
+      console.log(result)
+    }) )
   }
 
   getRoundedValue(rate: number) {
@@ -51,7 +55,7 @@ export class MyLibraryComponent implements OnInit {
   getAllContent() {
     this.spinner.show();
     this.myLibraryService.getContentList().subscribe(result => {
-     // debugger;
+     //debugger;
       this.spinner.hide();
       this.isDataLoaded = true;
       if (result.length > 0) {
