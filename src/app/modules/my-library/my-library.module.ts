@@ -7,6 +7,7 @@ import { MyLibraryComponent } from './my-library/my-library.component';
 import { RatingModule } from 'ng-starrating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule  } from '../../shared/components/components.module'
+import { AngularMaterialModule } from 'src/app/angularMaterialComponents/angular-material/angular-material.module';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { ComponentsModule  } from '../../shared/components/components.module'
     CommonModule,
     MyLibraryRoutingModule,
     RatingModule,
-
+    AngularMaterialModule,
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule
