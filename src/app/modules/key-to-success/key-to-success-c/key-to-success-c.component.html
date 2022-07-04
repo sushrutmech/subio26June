@@ -1,9 +1,9 @@
-<section class="container">
+<section class="container addGoalContainer">
   <div class="animated fadeIn full-height py-3" *ngIf="isDataLoaded">
-    <div class="row" *ngIf="selectedSuccessGoal">
-      <div class="col-lg-12 col-md-12 col-xl-8">
+    <div class="row lockContainerDivGoal" *ngIf="selectedSuccessGoal">
+      <!-- <div class="col-lg-12 col-md-12 col-xl-8">
          <app-success-key-chart [userSuccessID]="selectedSuccessGoal.userSuccessID"></app-success-key-chart> 
-      </div>
+      </div> -->
       <div class="col-lg-12 col-md-12 col-xl-8">
         <app-success-key-lock [userSuccessID]="selectedSuccessGoal.userSuccessID"></app-success-key-lock> 
      </div>
@@ -23,9 +23,9 @@
                 Last assessed: {{selectedSuccessGoal.lastAssessmentTaken | date : 'dd/MM/YYYY hh:mma'}}
               </span>
             </div>
-            <div class="align-items-center text-center">
-              <button class="btn btn-outline-primary btn-sm" [routerLink]="['goal', selectedSuccessGoal.userSuccessID]"
-                [state]="{goal_data: selectedSuccessGoal}">Re-assess this goal</button>
+            <div class="align-items-center text-center reAsses">
+              <button class="btn btn-outline-primary btn-sm addGoalBtn" [routerLink]="['goal', selectedSuccessGoal.userSuccessID]"
+                [state]="{goal_data: selectedSuccessGoal}">RE-ASSESS THIS GOAL</button>
             </div>
           </div>
         </div>
@@ -60,10 +60,10 @@
           </div>
         </div>
       </div>
-      <div class="col-md-12">
-        <button class="btn btn-outline-primary btn-sm" routerLink="/key-to-success/goal">
+      <div class="col-md-12 d-flex justify-content-center">
+        <button class="col-4 btn btn-outline-primary btn-sm addGoalBtn" routerLink="/key-to-success/goal">
           <i class="fa fa-crosshairs"></i>
-          Add a new goal
+          ADD NEW GOAL
         </button>
       </div>
       <div class="col-md-4">

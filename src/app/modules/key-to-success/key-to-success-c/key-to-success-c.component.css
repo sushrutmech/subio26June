@@ -57,3 +57,28 @@
   text-decoration: underline;
   cursor: default;
 }
+
+.lockContainerDivGoal {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addGoalBtn {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 150%;
+  background-color: #0198e0 !important;
+  color: #fff !important;
+  height: 41px;
+}
+
+.reAsses > button{
+  font-size: 14px;
+}
+
+@media(min-width:1300px){
+  .addGoalContainer{
+    max-width: 1250px;
+  }
+}
