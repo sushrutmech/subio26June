@@ -5,10 +5,11 @@ import { MyLibraryService } from '../../my-library/my-library.service'
 import { NgxSpinnerService } from 'ngx-spinner';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+
 @Component({
   selector: 'app-my-library-container',
   templateUrl: './my-library-container.component.html',
-  styleUrls: ['./my-library-container.component.css']
+  styleUrls: ['./my-library-container.component.scss']
 })
 export class MyLibraryContainerComponent implements OnInit {
 
@@ -39,10 +40,7 @@ export class MyLibraryContainerComponent implements OnInit {
       excludeSwitch: false
     })
     this.getAllContent();
-    console.log("**//++--" , 
-     this.myLibraryService.getContentList().subscribe(result => {
-      console.log(result)
-    }) )
+  
   }
 
   getRoundedValue(rate: number) {

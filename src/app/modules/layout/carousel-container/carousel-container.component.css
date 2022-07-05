@@ -68,12 +68,20 @@
     font-size: 16px;
     line-height: 150%;
 }
+.card{
+    min-height: 515px;
+}
 
 .cardPara {
     font-style: italic;
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 .cardBtn {

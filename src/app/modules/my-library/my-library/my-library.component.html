@@ -33,8 +33,8 @@
                 </div>
             </div>
 
-            <div *ngIf="searchResult?.length>0">
-                <div class="card library-card mb-2 min-height-150px" *ngFor="let single of searchResult">
+            <div class="row justify-content-between" *ngIf="searchResult?.length>0">
+                <div class="col-lg-3 col-md-4 col-12 card library-card mb-2 min-height-150px" *ngFor="let single of searchResult">
                     <div class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle"
                         *ngIf="single.isRead">
                         <div class="text-white">Read</div>
@@ -56,7 +56,7 @@
                                 onerror="this.src='../../../../assets/img/default-image.png'">
                         </div>
 
-                        <div class="col d-xl-flex d-block px-0">
+                        <div class="cardDetailContainer col d-xl-flex d-block px-0">
                             <div class="col-xxl-10 col-xl-9  col-sm-12">
                                 <!-- <h3><a class="search-result-title">{{single.contentName | uppercase}}</a></h3> -->
                                 <button class="btn btn-link px-0" (click)="handleWatchVideo(single)">
@@ -71,14 +71,14 @@
                             </div>
                             <div class="col d-flex align-items-center justify-content-center">
                                 <!-- [ngStyle]="(!single.isRead) ? {'display': 'block'} : {'visibility': 'hidden'}" -->
-                                <div class="text-center ">
-                                    <label class="switch">
+                                <div class="text-center" style="display:flex;flex-direction: row-reverse;justify-content: space-between;">
+                                    <label  l class="">
                                         <div class="" [ngClass]="{'d-none': single.isRead}">
                                             <input type="checkbox" class="" [id]="single.contentID"
                                                 [checked]="single.isAlreadyReadingList"
                                                 (click)="addToReadingList(single.contentID)">
-                                            <span class="slider round"></span>
-                                            <label class="custom-control-label" [for]="single.contentID">Add to viewing list
+                                            <span class=""></span>
+                                            <label class="custom-control-label" [for]="single.contentID">
                                             </label>
                                         </div>
                                     </label>
@@ -122,7 +122,7 @@
                         'min-width-230px' : readingList.length > 6 && suggestedList.length ==0, 
                         'min-width-230px' : readingList.length > 6 && suggestedList.length >0} -->
 
-                    <div class="h-310px col-12 overflow-auto pr-lg-1 pl-0 d-flex" *ngIf="readingList?.length>0">
+                    <div class="h-310px toViewCont col-12 overflow-auto pr-lg-1 pl-0 d-flex" *ngIf="readingList?.length>0">
                         <div *ngFor="let item of readingList" class="h-100 pr-2 py-1 pl-0"
                             [ngClass]="{
                             'col-xxl-2 col-xl-3 col-md-4 col-sm-6 col-12': readingList.length <= 6, 'min-width-230px' : readingList.length > 6}">
@@ -169,7 +169,7 @@
                         <span class="font-lg text-uppercase">SUGGESTED VIEWING
                         </span>
                     </div>
-                    <div class="d-flex overflow-auto h-370px pl-0" *ngIf="suggestedList?.length>0">
+                    <div class="d-flex toViewCont overflow-auto h-370px pl-0" *ngIf="suggestedList?.length>0">
                         <div *ngFor="let single of suggestedList" class="h-100 pr-2 py-1 pl-0"
                             [ngClass]="{'col-xxl-2 col-xl-3 col-md-4 col-sm-6 col-12': suggestedList?.length <= 6, 'min-width-230px' : suggestedList?.length > 6 }">
                             <div class="card w-100 library-card mr-xl-2 mr-sm-1 h-100">
@@ -246,7 +246,7 @@
                     <span class="font-lg text-uppercase">PAST VIEWING
                     </span>
                 </div>
-                <div class="overflow-auto pr-1  d-flex h-330px" *ngIf="readingHistory?.length>0">
+                <div class="overflow-auto toViewCont pr-1  d-flex h-330px" *ngIf="readingHistory?.length>0">
                     <div *ngFor="let item of readingHistory" class="h-100 pr-2 py-1 pl-0"
                         [ngClass]="{'col-xxl-2 col-xl-3 col-md-4 col-sm-6 col-12': readingList?.length <= 6, 'min-width-230px' : readingList?.length > 6}">
 

@@ -18,21 +18,50 @@ const routes: Routes = [
     component: GoalComponent,
     
   },
+
+  {
+    path: 'home/goal',
+    component: GoalComponent,
+    
+  },
+
+  {
+    path: 'home/goal/:goal-id',
+    component: GoalComponent,
+    data: { state: 'goal:id' }
+  },
+
   {
     path: 'goal/:goal-id',
     component: GoalComponent,
     data: { state: 'goal:id' }
   },
+
   {
     path: 'goal/:goal-id/assessment',
     component: AssessmentComponent,
     data: { state: 'assessment' }
   },
+
   {
     path: 'assessment',
     component: AssessmentComponent,
     
   },
+
+  {
+    path: 'home/goal/:goal-id/assessment',
+    component: AssessmentComponent,
+    data: { state: 'assessment' }
+  },
+
+  {
+    path: 'home/assessment',
+    component: AssessmentComponent,
+    
+  },
+
+
  
 ];
 

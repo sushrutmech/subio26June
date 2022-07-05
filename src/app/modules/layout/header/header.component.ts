@@ -24,7 +24,8 @@ export class HeaderComponent implements OnInit {
     private spinner: NgxSpinnerService,
 
   ) { 
-    this.userSession = AuthService.userSession.user;
+    // console.log(AuthService.userSession)
+    this.userSession = AuthService.userSession? AuthService.userSession.user:{};
   }
 
   ngOnInit(): void {

@@ -1,12 +1,17 @@
 <section class="container addGoalContainer">
+ 
+
   <div class="animated fadeIn full-height py-3" *ngIf="isDataLoaded">
     <div class="row lockContainerDivGoal" *ngIf="selectedSuccessGoal">
       <!-- <div class="col-lg-12 col-md-12 col-xl-8">
          <app-success-key-chart [userSuccessID]="selectedSuccessGoal.userSuccessID"></app-success-key-chart> 
       </div> -->
+
       <div class="col-lg-12 col-md-12 col-xl-8">
         <app-success-key-lock [userSuccessID]="selectedSuccessGoal.userSuccessID"></app-success-key-lock> 
      </div>
+
+
       <div class="col-lg-12 col-md-12 col-xl-4">
         <div class="row" *ngIf="selectedSuccessGoal">
           <div class="col-md-12">
@@ -24,7 +29,8 @@
               </span>
             </div>
             <div class="align-items-center text-center reAsses">
-              <button class="btn btn-outline-primary btn-sm addGoalBtn" [routerLink]="['goal', selectedSuccessGoal.userSuccessID]"
+              <button class="btn btn-outline-primary btn-sm addGoalBtn"
+                [routerLink]="['goal', selectedSuccessGoal.userSuccessID]"
                 [state]="{goal_data: selectedSuccessGoal}">RE-ASSESS THIS GOAL</button>
             </div>
           </div>
@@ -45,20 +51,52 @@
             </div>
           </div>
         </div>
+        <!-- ng swithch case logic ................. -->
+
+
+
+
+
+
         <div class="row" *ngFor="let item of successGoalList">
-          <div class="col-8">
-            <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
-              (click)="setSuccessGoal(item)">
-              <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
-              <span>{{item.goal}}</span>
+          <div *ngIf="!tabIndex">
+            <div class="col-8">
+              <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
+                (click)="setSuccessGoal(item)">
+                <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
+                <span>{{item.goal}}</span>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="goal-item-value" [class.active]="item === selectedSuccessGoal" (click)="setSuccessGoal(item)">
+                <span>{{item.dateTakenDescription}}</span>
+              </div>
+
             </div>
           </div>
-          <div class="col-4">
-            <div class="goal-item-value" [class.active]="item === selectedSuccessGoal" (click)="setSuccessGoal(item)">
-              <span>{{item.dateTakenDescription}}</span>
+
+          <div *ngIf="tabIndex && item.successGoalTypeId===tabIndex">
+            <div class="col-8">
+              <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
+                (click)="setSuccessGoal(item)">
+                <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
+                <span>{{item.goal}}</span>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="goal-item-value" [class.active]="item === selectedSuccessGoal" (click)="setSuccessGoal(item)">
+                <span>{{item.dateTakenDescription}}</span>
+              </div>
+
             </div>
           </div>
+
+
         </div>
+
+
+
+
       </div>
       <div class="col-md-12 d-flex justify-content-center">
         <button class="col-4 btn btn-outline-primary btn-sm addGoalBtn" routerLink="/key-to-success/goal">
@@ -67,7 +105,7 @@
         </button>
       </div>
       <div class="col-md-4">
-  
+
       </div>
     </div>
   </div>
