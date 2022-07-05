@@ -14,10 +14,14 @@
 
             <div class="marPad0">
                 <img src="../../../assets/componnets/Avatar.svg" alt="Avatar" class="avatar">
+                <!-- <img
+        [src]="userSession.profilePic ? 'data:image/png;base64,' + userSession.profilePic : './assets/img/dummy-profile.png'"
+        class="user-image" /> -->
+           
             </div>
             <div class="marPad10">
 
-                <P class="marPad0">Good Morning Kishor</P>
+                <P class="marPad0">Good Morning {{userSession.firstName}}</P>
                 <span class="marPad0">Here is your<strong> Keys to Success</strong> </span>
 
             </div>
@@ -53,7 +57,7 @@
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <div class="dropdown-header">
                           <h5 class="mb-0 text-primary userName">
-                        userSession.firstName}} serSession.lastName}}
+                            {{userSession.firstName}}
                           </h5>
                           <span class="text-muted userJob">userSession.jobTitle}}</span>
                       </div>

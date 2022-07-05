@@ -18,198 +18,48 @@
         </mat-tab>
 
 
-        <mat-tab label="Reading List">
-          <div class="row cardGap">
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
+        <mat-tab label="Reading List" class="">
+
+          <div class="row cardGap" *ngIf="!isWatchVideo">
+
+
+            <div class="h-310px col-12 overflow-auto pr-lg-1 pl-0 d-flex" *ngIf="readingList?.length>0">
+              <div *ngFor="let item of readingList" class="h-100 pr-2 py-1 pl-0"
+                [ngClass]="{
+                'col-xxl-2 col-xl-3 col-md-4 col-sm-6 col-12': readingList.length <= 6, 'min-width-230px' : readingList.length > 6}">
+                <div class=" h-100 card library-card mh-fit-content mb-2 ">
+                  <div class="card-body text-center">
+                    <div class="card-header border-0  bg-white p-0 overlay mb-2 overlay min-height-140px">
+
+                      <div class="overlay-content">
+                        <div class="round-button" (click)="handleWatchVideo(item)">
+                          <i class="fa fa-play fa-2x pl-1" aria-hidden="true" *ngIf="item.contentTypeName=='Video'"></i>
+                          <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"
+                            *ngIf="item.contentTypeName== 'PDF Document'"></i>
+                        </div>
+                      </div>
+                      <img [src]="'data:image/png;base64,'+ item.contentImage" class="suggested-image"
+                        onerror="this.src='../../../../assets/img/default-image.png'">
+                    </div>
+                    <div>
+
+                      <button class="btn btn-link  px-0" (click)="handleWatchVideo(item)">
+                        <h5 class="card-title text-dark line-clamp">{{item.contentName}}</h5>
+                      </button>
+                    </div>
+
+                    <small class="text-uppercase">{{item.timetoViewDescription}} to {{item.contentTypeName
+                      =='video'
+                      ? 'watch' : 'read'}}</small>
                   </div>
                 </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
+              </div>
             </div>
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
+            <div class=" overflow-auto pr-lg-1 d-lg-block d-block d-sm-flex" *ngIf="readingList?.length==0">
+              <div class="" *ngIf="isDataLoaded">
+                <span class="text-muted">Nothing in your reading list</span>
+              </div>
             </div>
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-
-
-
-
-
           </div>
 
         </mat-tab>
@@ -225,9 +75,11 @@
                 <div class="statusBar">Continue Reading</div>
                 <div>
                   <div class="cardTitle">K2A SUCCESS CHARTER </div>
+
                   <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
+
+                    <!-- <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
+                    </star-rating> -->
                     <span class="ratingNumber">
                       (5432)
                     </span>
@@ -252,8 +104,8 @@
                 <div>
                   <div class="cardTitle">K2A SUCCESS CHARTER </div>
                   <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
+                    <!-- <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
+                    </star-rating> -->
                     <span class="ratingNumber">
                       (5432)
                     </span>
@@ -278,8 +130,8 @@
                 <div>
                   <div class="cardTitle">K2A SUCCESS CHARTER </div>
                   <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
+                    <!-- <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
+                    </star-rating> -->
                     <span class="ratingNumber">
                       (5432)
                     </span>
@@ -304,8 +156,8 @@
                 <div>
                   <div class="cardTitle">K2A SUCCESS CHARTER </div>
                   <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
+                    <!-- <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
+                    </star-rating> -->
                     <span class="ratingNumber">
                       (5432)
                     </span>
@@ -331,8 +183,8 @@
                 <div>
                   <div class="cardTitle">K2A SUCCESS CHARTER </div>
                   <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
+                    <!-- <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
+                    </star-rating> -->
                     <span class="ratingNumber">
                       (5432)
                     </span>
@@ -358,8 +210,8 @@
                 <div>
                   <div class="cardTitle">K2A SUCCESS CHARTER </div>
                   <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
+                    <!-- <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
+                    </star-rating> -->
                     <span class="ratingNumber">
                       (5432)
                     </span>
@@ -385,8 +237,8 @@
                 <div>
                   <div class="cardTitle">K2A SUCCESS CHARTER </div>
                   <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
+                    <!-- <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
+                    </star-rating> -->
                     <span class="ratingNumber">
                       (5432)
                     </span>
@@ -413,198 +265,64 @@
         </mat-tab>
         <mat-tab label="Past Viewing">
 
-          <div class="row cardGap">
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
-
-            <div class="col-md-12 col-lg-6 col-xl-3">
-              <mat-card class="example-card">
-                <img width="100px" height="200px" mat-card-image
-                  src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                <div class="statusBar">Continue Reading</div>
-                <div>
-                  <div class="cardTitle">K2A SUCCESS CHARTER </div>
-                  <div class="d-flex justify-content-start mt-1 mb-1">
-                    <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
-                    </star-rating>
-                    <span class="ratingNumber">
-                      (5432)
-                    </span>
-                  </div>
-                </div>
-                <mat-card-content>
-                  <p class="cardPara">
-                    A warm welcome to Subio from John, the Founder and CEO of Subio. Let's start with a bit of
-                    background to how the Key to Success was born and what to expect during this programme.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions class="d-flex justify-content-center">
-                  <button class="cardBtn" mat-flat-button>Continue Watching</button>
-                </mat-card-actions>
-              </mat-card>
-            </div>
+          <div class="row cardGap" *ngIf="!isWatchVideo">
 
 
 
+            <div class="col-sm-12 pl-0">
 
+              <div class="text-md-left text-center py-3">
+                <span class="font-lg text-uppercase">PAST VIEWING
+                </span>
+              </div>
+              <div class=" col-sm-12 overflow-auto pr-1  h-330px" *ngIf="readingHistory?.length>0">
+                <div *ngFor="let item of readingHistory" class=" col-sm-12 h-100 pr-2 py-1 pl-0"
+                  [ngClass]="{'col-xxl-2 col-xl-3 col-md-4 col-sm-6 col-12': readingList?.length <= 6, 'min-width-230px' : readingList?.length > 6}">
+
+                  <div class="card library-card mr-lg-2 mr-sm-1 w-100 h-310px">
+                    <div class="card-body text-center ">
+                      <div class="card-header border-0  bg-white p-0 overlay mb-2 overlay min-height-140px">
+
+                        <div class="overlay-content">
+                          <div class="round-button" (click)="handleWatchVideo(item)">
+                            <i class="fa fa-play fa-2x pl-1" aria-hidden="true"
+                              *ngIf="item.contentTypeName=='Video'"></i>
+                            <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"
+                              *ngIf="item.contentTypeName== 'PDF Document'"></i>
+                          </div>
+                        </div>
+                        <img [src]="'data:image/png;base64,'+ item.contentImage" class="suggested-image"
+                          onerror="this.src='./assets/img/default-image.png'">
+                      </div>
+                      <button class="btn btn-link  px-0" (click)="handleWatchVideo(item)">
+                        <h5 class="card-title text-dark line-clamp">{{item.contentName}}</h5>
+                      </button>
+
+                      <div class="m-0 d-flex align-items-center justify-content-center">
+                        <!-- <rating [(ngModel)]="item.avgRating" class="rgb(255,192,0)" [max]="item.avgRating"
+                                  [readonly]="true">
+                              </rating> -->
+                        <star-rating [value]="item.avgRating" [totalstars]="getRoundedValue(item.avgRating)"
+                          checkedcolor="rgb(255,192,0)" uncheckedcolor="white" size="24px" [readonly]="true">
+                        </star-rating>
+                        <span class="ml-1 mt-1" *ngIf="item.avgRating>0">{{item.avgRating}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="overflow-auto pr-lg-1 d-lg-block d-block d-sm-flex" *ngIf="readingHistory?.length==0">
+                <div>
+                  <span class="text-muted">Nothing in your past reading list</span>
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
+
+
         </mat-tab>
       </mat-tab-group>
     </div>

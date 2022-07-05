@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 
+
+import { User } from 'src/app/shared/interfaces/user';
+
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,13 +16,16 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class HeaderComponent implements OnInit {
   currentUser:any;
+  userSession!: User;
 
   constructor(
     private AuthService:AuthService,
     private router: Router,
     private spinner: NgxSpinnerService,
 
-  ) { }
+  ) { 
+    this.userSession = AuthService.userSession.user;
+  }
 
   ngOnInit(): void {
     

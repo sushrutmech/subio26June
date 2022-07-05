@@ -16,8 +16,7 @@ import { MyLibraryContainerComponent } from './my-library-container/my-library-c
 import { MyLibraryModule } from '../my-library/my-library.module';
 import { CarouselContainerComponent } from './carousel-container/carousel-container.component';
 
-
-
+import { RatingModule } from 'ng-starrating';
 
 
 
@@ -36,11 +35,13 @@ import { CarouselContainerComponent } from './carousel-container/carousel-contai
     CommonModule,
     IvyCarouselModule,
     AngularMaterialModule,
-    StarRatingModule.forRoot(),
+    
     LayoutRoutingModule,
     ComponentsModule,
     KeyToSuccessModule,
-    MyLibraryModule
+    MyLibraryModule,
+    RatingModule
+    
     
   ],
   exports: [
