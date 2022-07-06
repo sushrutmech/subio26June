@@ -3,7 +3,7 @@
 }
 
 .card{
-  min-width: 300px !important;
+  border-radius: 0px !important;
 }
 .pastVcard{
   justify-content: center;
@@ -13,13 +13,14 @@
 .card-body{
   display: flex !important;
   flex-direction: column !important;
+  text-align: left !important;
+  padding: 0px;
 }
 
 .library-card {
   border-radius: 1.5rem;
   box-shadow: 0px 4px 5px 0px rgb(0 0 0 / 30%);
   min-height: calc(100% - 1.5rem);
-  width: 300px !important;
 }
 
 .custom-rating-star {
@@ -98,8 +99,8 @@
 }
 
 .suggested-image {
-  width: auto;
-  height: 125px;
+  width: 100%;
+  height: 130px;
   max-width: 100%;
 }
 

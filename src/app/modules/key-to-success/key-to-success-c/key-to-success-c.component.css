@@ -3,6 +3,11 @@
   padding: 0.3rem 0px;
 }
 
+.addGoalContainer{
+  max-width: 100%;
+  padding: 0px !important;
+}
+
 .goal-item img {
   width: 25px;
   height: 25px;
@@ -77,8 +82,3 @@
   font-size: 14px;
 }
 
-@media(min-width:1300px){
-  .addGoalContainer{
-    max-width: 1250px;
-  }
-}

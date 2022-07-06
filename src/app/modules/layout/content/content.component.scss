@@ -5,7 +5,13 @@
     box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 8px;
 
     border-radius: 4px;
+    max-width: 100%;
 }
+.my-libraryContainer{
+    padding: 0px 40px;
+ }
+
+
 
 /* blue barr */
 .containerImg1 {
@@ -411,3 +417,13 @@
 }
 
 /* sarfaraz ending */
+
+::ng-deep{
+    .container2 .mat-tab-body-content {
+      overflow: unset !important;
+    }
+    .container2 .mat-tab-body.mat-tab-body-active {
+      overflow-y: unset !important;
+      overflow: unset !important;
+  }
+}

@@ -167,17 +167,19 @@
                                         <img [src]="'data:image/png;base64,'+ item.contentImage" class="suggested-image"
                                             onerror="this.src='../../../../assets/img/default-image.png'">
                                     </div>
-                                    <div>
+                                    <div style="padding: 4px 8px;">
+                                        <div>
 
-                                        <button class="btn btn-link  px-0" (click)="handleWatchVideo(item)">
-                                            <h5 class="card-title text-dark line-clamp">{{item.contentName}}</h5>
-                                        </button>
+                                            <button class="btn btn-link  px-0" (click)="handleWatchVideo(item)">
+                                                <h5 class="card-title text-dark line-clamp">{{item.contentName}}</h5>
+                                            </button>
+                                        </div>
+    
+                                        <small class="text-uppercase">{{item.timetoViewDescription}} to
+                                            {{item.contentTypeName
+                                            =='video'
+                                            ? 'watch' : 'read'}}</small>
                                     </div>
-
-                                    <small class="text-uppercase">{{item.timetoViewDescription}} to
-                                        {{item.contentTypeName
-                                        =='video'
-                                        ? 'watch' : 'read'}}</small>
                                 </div>
                             </div>
                         </div>
@@ -215,12 +217,12 @@
                                             class="suggested-image"
                                             onerror="this.src='../../../../assets/img/default-image.png'">
                                     </div>
-                                    <div>
+                                    <div style="padding: 4px 8px;">
                                         <button class="btn btn-link px-0" (click)="handleWatchVideo(single)">
                                             <h5 class="card-title text-dark line-clamp">{{single.contentName}}</h5>
                                         </button>
+                                        <div><small class="text-uppercase">{{single.author}}</small></div>
                                     </div>
-                                    <div><small class="text-uppercase">{{single.author}}</small></div>
 
                                     <div class="mb-2">
                                         <span class="text-uppercase">{{single.timetoViewDescription}} to
@@ -290,18 +292,20 @@
                                     <img [src]="'data:image/png;base64,'+ item.contentImage" class="suggested-image"
                                         onerror="this.src='./assets/img/default-image.png'">
                                 </div>
-                                <button class="btn btn-link  px-0" (click)="handleWatchVideo(item)">
-                                    <h5 class="card-title text-dark line-clamp">{{item.contentName}}</h5>
-                                </button>
-
-                                <div class="m-0 d-flex align-items-center justify-content-center">
-
-                                    <star-rating [value]="item.avgRating" [totalstars]="getRoundedValue(item.avgRating)"
-                                        checkedcolor="rgb(255,192,0)" uncheckedcolor="white" size="24px"
-                                        [readonly]="true">
-                                    </star-rating>
-
-                                    <span class="ml-1 mt-1" *ngIf="item.avgRating>0">{{item.avgRating}}</span>
+                                <div style="padding: 4px 8px;">
+                                    <button class="btn  px-0" (click)="handleWatchVideo(item)">
+                                        <h5 class="card-title text-dark line-clamp">{{item.contentName}}</h5>
+                                    </button>
+    
+                                    <div class="m-0 d-flex align-items-center">
+    
+                                        <star-rating [value]="item.avgRating" [totalstars]="getRoundedValue(item.avgRating)"
+                                            checkedcolor="rgb(255,192,0)" uncheckedcolor="white" size="24px"
+                                            [readonly]="true">
+                                        </star-rating>
+    
+                                        <span class="ml-1 mt-1" *ngIf="item.avgRating>0">{{item.avgRating}}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
