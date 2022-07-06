@@ -18,6 +18,7 @@ import { CarouselContainerComponent } from './carousel-container/carousel-contai
 
 import { RatingModule } from 'ng-starrating';
 import { WatchComponent } from './watch/watch.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -42,7 +43,8 @@ import { WatchComponent } from './watch/watch.component';
     ComponentsModule,
     KeyToSuccessModule,
     MyLibraryModule,
-    RatingModule
+    RatingModule,
+    NgxSpinnerModule
     
     
   ],

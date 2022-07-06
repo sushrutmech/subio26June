@@ -45,8 +45,8 @@
                 <h5 class="card-title">{{item.stepName}}</h5>
                 <p class="card-text">{{item.contentBlurb}}</p>
               </div>
-              <div class="card-footer">
-                <button *ngIf="nextVideoIndex === i" class="btn btn-block btn-primary" (click)="handleWatchVideo()">
+              <div class="card-footer text-center">
+                <button *ngIf="nextVideoIndex === i" class="btn btn-block btn-primary text-center" (click)="handleWatchVideo()">
                   <div [ngSwitch]="item.contenttypeid">
                     <span *ngSwitchCase="contentType.Video">WATCH NOW</span>
                     <span *ngSwitchCase="contentType.PDF_Document">VIEW NOW</span>

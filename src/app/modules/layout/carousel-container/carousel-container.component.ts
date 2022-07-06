@@ -26,7 +26,7 @@ export class CarouselContainerComponent implements OnInit {
   nextVideoIndex: number = -1;
   selectedVideoIndex: number = -1;
   timeSubscription!: Subscription;
-  contentType = ProgramContentTypes;
+  contentType:any= ProgramContentTypes;
   selectedContent:any
 
   constructor(
@@ -51,6 +51,7 @@ export class CarouselContainerComponent implements OnInit {
       if (results.userProgramContent.length > 0 && results.userProgramInstance.length > 0) {
         this.programInstance = results.userProgramInstance[0];
         this.programContents = results.userProgramContent;
+        //this.contentType= results.userProgramContent;
         this.nextVideoIndex = this.programContents.findIndex(x => x.readCount === 0);
         if (this.nextVideoIndex === -1) {
           let allRead = this.programContents.filter(x => x.readCount > 0).length;
