@@ -1,4 +1,4 @@
-<section class="container">
+<section class="my-libraryContainer">
 
     <div class="full-height" *ngIf="isDataLoaded; else noDataTemplate">
         <div class="animated fadeIn full-height pt-2" *ngIf="!isWatchVideo">
@@ -10,7 +10,7 @@
                 <div class="col-sm-12 mb-3">
                     <form [formGroup]="searchForm" (ngSubmit)="searchTerm()">
                         <div class="d-sm-flex align-items-center d-block">
-                            <div class="input-group col-lg-8 col-sm-6 d-flex align-items-center pl-0">
+                            <div class="col-lg-8 col-sm-6 d-flex align-items-center pl-0">
 
                                 <input type="text" class="form-control" id="validationTooltipUsername"
                                     placeholder="Search" formControlName="searchInput" name="searchInput">
@@ -117,15 +117,15 @@
                     </div>
 
                     <!-- [ngClass]="{
-                        'col-xxl-2 col-md-3 col-sm-4 col-12': readingList.length <= 6 && suggestedList.length > 0 ,
-                        'col-xxl-2 col-md-3 col-sm-4 col-12': readingList.length <= 6 && suggestedList.length ==0 , 
+                        ' col-md-3 col-sm-4 col-12': readingList.length <= 6 && suggestedList.length > 0 ,
+                        ' col-md-3 col-sm-4 col-12': readingList.length <= 6 && suggestedList.length ==0 , 
                         'min-width-230px' : readingList.length > 6 && suggestedList.length ==0, 
                         'min-width-230px' : readingList.length > 6 && suggestedList.length >0} -->
 
-                    <div class="h-310px toViewCont col-12 overflow-auto pr-lg-1 pl-0 d-flex" *ngIf="readingList?.length>0">
-                        <div *ngFor="let item of readingList" class="h-100 pr-2 py-1 pl-0"
+                    <div class="h-310px row col-12   pr-lg-1 pl-0 d-flex" *ngIf="readingList?.length>0">
+                        <div *ngFor="let item of readingList" class="pastVcard h-100 pr-2 py-1 pl-0"
                             [ngClass]="{
-                            'col-xxl-2 col-xl-3 col-md-4 col-sm-6 col-12': readingList.length <= 6, 'min-width-230px' : readingList.length > 6}">
+                            ' col-xl-3 col-md-4 col-sm-6 col-12': readingList.length <= 6, 'min-width-230px' : readingList.length > 6}">
                             <div class=" h-100 card library-card mh-fit-content mb-2 ">
                                 <div class="card-body text-center">
                                     <div
@@ -169,9 +169,9 @@
                         <span class="font-lg text-uppercase">SUGGESTED VIEWING
                         </span>
                     </div>
-                    <div class="d-flex toViewCont overflow-auto h-370px pl-0" *ngIf="suggestedList?.length>0">
-                        <div *ngFor="let single of suggestedList" class="h-100 pr-2 py-1 pl-0"
-                            [ngClass]="{'col-xxl-2 col-xl-3 col-md-4 col-sm-6 col-12': suggestedList?.length <= 6, 'min-width-230px' : suggestedList?.length > 6 }">
+                    <div class="d-flex row  h-370px pl-0" *ngIf="suggestedList?.length>0">
+                        <div *ngFor="let single of suggestedList" class="pastVcard h-100 pr-2 py-1 pl-0"
+                            [ngClass]="{' col-xl-3 col-md-4 col-sm-6 col-12': suggestedList?.length <= 6, 'min-width-230px' : suggestedList?.length > 6 }">
                             <div class="card w-100 library-card mr-xl-2 mr-sm-1 h-100">
 
                                 <div class="card-body text-center">
@@ -246,9 +246,9 @@
                     <span class="font-lg text-uppercase">PAST VIEWING
                     </span>
                 </div>
-                <div class="overflow-auto toViewCont pr-1  d-flex h-330px" *ngIf="readingHistory?.length>0">
-                    <div *ngFor="let item of readingHistory" class="h-100 pr-2 py-1 pl-0"
-                        [ngClass]="{'col-xxl-2 col-xl-3 col-md-4 col-sm-6 col-12': readingList?.length <= 6, 'min-width-230px' : readingList?.length > 6}">
+                <div class=" row pr-1  d-flex h-330px" *ngIf="readingHistory?.length>0">
+                    <div *ngFor="let item of readingHistory" class="pastVcard h-100 pr-2 py-1 pl-0"
+                        [ngClass]="{' col-xl-3 col-md-4 col-sm-6 col-12': readingList?.length <= 6, 'min-width-230px' : readingList?.length > 6}">
 
                         <div class="card library-card mr-lg-2 mr-sm-1 w-100 h-310px">
                             <div class="card-body text-center ">

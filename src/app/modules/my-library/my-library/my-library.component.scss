@@ -5,7 +5,11 @@
 .card{
   min-width: 300px !important;
 }
-
+.pastVcard{
+  justify-content: center;
+    align-items: center;
+    display: flex;
+}
 .card-body{
   display: flex !important;
   flex-direction: column !important;
@@ -315,7 +319,8 @@ input:checked + .slider:before {
 
 //////////toggle ended
 
-.toViewCont{
-  flex-wrap: wrap;
-  gap: 30px;
+
+
+.my-libraryContainer{
+   padding: 32PX;
 }
