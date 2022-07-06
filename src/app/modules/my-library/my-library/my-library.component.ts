@@ -4,6 +4,7 @@ import { LibraryListInstance , SearchLibrary } from '../../../shared/interfaces/
 import { MyLibraryService } from '../my-library.service'
 import { NgxSpinnerService } from 'ngx-spinner';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-my-library',
@@ -26,6 +27,10 @@ export class MyLibraryComponent implements OnInit {
 
   searchForm!: FormGroup;
   isSearched: boolean = false;
+
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
 
   
 

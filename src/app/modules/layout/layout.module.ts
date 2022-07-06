@@ -17,6 +17,7 @@ import { MyLibraryModule } from '../my-library/my-library.module';
 import { CarouselContainerComponent } from './carousel-container/carousel-container.component';
 
 import { RatingModule } from 'ng-starrating';
+import { WatchComponent } from './watch/watch.component';
 
 
 
@@ -29,6 +30,7 @@ import { RatingModule } from 'ng-starrating';
     KeySuccessContainerComponent,
     MyLibraryContainerComponent,
     CarouselContainerComponent,
+    WatchComponent,
     
   ],
   imports: [

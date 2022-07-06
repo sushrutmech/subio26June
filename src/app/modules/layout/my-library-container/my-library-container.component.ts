@@ -90,6 +90,16 @@ export class MyLibraryContainerComponent implements OnInit {
     this.isWatchVideo = true;
   }
 
+  handleContentViewerClose(ev:any) {
+    if (ev) {
+      this.getAllContent();
+      this.searchTerm()
+    }
+    this.selectedContent = null;
+    this.isWatchVideo = false;
+  }
+
+
 
 
 

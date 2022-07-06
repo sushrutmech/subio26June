@@ -37,9 +37,9 @@ export class KeyToSuccessCComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("hello pankaj")
+    
     this.getSuccessGoalList();
-    console.log("index from keycontainer")
+    
   }
 
   getSuccessGoalList() {

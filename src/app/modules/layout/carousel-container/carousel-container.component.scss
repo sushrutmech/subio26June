@@ -206,3 +206,146 @@
 }
 
 /* sarfaraz ending */
+
+
+// css from ood code 
+
+  
+  .key-success-card .card-header {
+    border-bottom: unset;
+  }
+  
+  .item-calender {
+    text-align: center;
+  }
+  
+  .item-calender i {
+    font-size: 12rem;
+    position: relative;
+  }
+  .absolute-calendar-text {
+    position: absolute;
+    font-size: 15%;
+    width: 84%;
+    margin-left: 8%;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    bottom: 10%;
+    justify-content: space-around;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+ 
+  
+  
+  
+  
+
+  
+  .overlay {
+    position: relative;
+  }
+  
+  .overlay:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    opacity: 1;
+    border-radius: inherit;
+    transition: inherit;
+  }
+  
+  .overlay-content {
+    position: absolute;
+    padding: 1rem;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .round-button {
+    box-sizing: border-box;
+    display: flex;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 0;
+    border-radius: 50%;
+    color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .round-button:hover {
+    background-color: rgb(0 0 0 / 80%);
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 50%);
+  }
+  
+  time.calendar-icon {
+    font-size: 1em;
+    display: block;
+    position: relative;
+    width: 14em;
+    height: 14em;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    margin: 1em auto;
+    border-radius: 0.6em;
+    box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff,
+      0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+    // box-shadow: 0 1px 0 #2f5597, 0 2px 0 #fff, 0 3px 0 #2f5597, 0 4px 0 #fff, 0 5px 0 #2f5597, 0 0 0 1px #2f5597;
+    overflow: hidden;
+    transform-origin: 50% 10%;
+  }
+  
+  time.calendar-icon * {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+  }
+  
+  time.calendar-icon strong {
+    position: absolute;
+    top: 0;
+    padding: 0.3em 0;
+    font-size: 2em;
+    color: #fff;
+    // background-color: #2f5597;
+    // border-bottom: 1px dashed #ffffff;
+    // box-shadow: 0 2px 0px 0px #2f5597;
+    background-color: #fd9f1b;
+    border-bottom: 1px dashed #f37302;
+    box-shadow: 0 2px 0 #fd9f1b;
+  }
+  
+  time.calendar-icon em {
+    position: absolute;
+    bottom: 10px;
+    // color: #2f5597;
+    color: #fd9f1b;
+    font-size: 2em;
+  }
+  
+  time.calendar-icon span {
+    width: 100%;
+    font-size: 4em;
+    padding-top: 1.2em;
+    color: #2f2f2f;
+  }
+  

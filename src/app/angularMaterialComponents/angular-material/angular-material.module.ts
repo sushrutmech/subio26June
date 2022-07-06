@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -25,7 +26,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatInputModule,
     MatIconModule,
     MatFormFieldModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSlideToggleModule
   ]
 })
 export class AngularMaterialModule { }

@@ -22,9 +22,15 @@
 
                             </div>
                             <div class="custom-control custom-switch exclude-switch">
+                                <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked"
+                                    [disabled]="disabled" name="excludeSwitch" formControlName="excludeSwitch"
+                                    id="excludeSwitch" (change)="searchTerm()">
+                                    Slide me!
+                                </mat-slide-toggle>
 
-                                <input type="checkbox" class="custom-switch custom-control-input" name="excludeSwitch"
-                                    formControlName="excludeSwitch" id="excludeSwitch" (change)="searchTerm()">
+                                <!-- <input type="checkbox" class="custom-switch custom-control-input" name="excludeSwitch"
+                                    formControlName="excludeSwitch" id="excludeSwitch" (change)="searchTerm()"> -->
+
                                 <label class="custom-control-label mt-sm-0 mt-2" for="excludeSwitch">Exclude articles
                                     already viewed</label>
                             </div>
@@ -34,7 +40,8 @@
             </div>
 
             <div class="row justify-content-between" *ngIf="searchResult?.length>0">
-                <div class="col-lg-3 col-md-4 col-12 card library-card mb-2 min-height-150px" *ngFor="let single of searchResult">
+                <div class="col-lg-3 col-md-4 col-12 card library-card mb-2 min-height-150px"
+                    *ngFor="let single of searchResult">
                     <div class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle"
                         *ngIf="single.isRead">
                         <div class="text-white">Read</div>
@@ -71,18 +78,36 @@
                             </div>
                             <div class="col d-flex align-items-center justify-content-center">
                                 <!-- [ngStyle]="(!single.isRead) ? {'display': 'block'} : {'visibility': 'hidden'}" -->
-                                <div class="text-center" style="display:flex;flex-direction: row-reverse;justify-content: space-between;">
-                                    <label  l class="">
+                                <div class="text-center"
+                                    style="display:flex;flex-direction: row-reverse;justify-content: space-between;">
+                                    <label l class="">
                                         <div class="" [ngClass]="{'d-none': single.isRead}">
+                                            <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked"
+                                                [disabled]="disabled" class="" [id]="single.contentID"
+                                                [checked]="single.isAlreadyReadingList"
+                                                (click)="addToReadingList(single.contentID)">
+
+                                            </mat-slide-toggle>
+                                            <span class=""></span>
+                                            <label class="custom-control-label" [for]="single.contentID">
+                                            </label>
+                                        </div>
+
+
+
+
+                                        <!-- <div class="" [ngClass]="{'d-none': single.isRead}">
                                             <input type="checkbox" class="" [id]="single.contentID"
                                                 [checked]="single.isAlreadyReadingList"
                                                 (click)="addToReadingList(single.contentID)">
                                             <span class=""></span>
                                             <label class="custom-control-label" [for]="single.contentID">
                                             </label>
-                                        </div>
+                                        </div> -->
+
+
                                     </label>
-                                    
+
                                     <div class="m-0 d-flex align-items-center justify-content-center"
                                         *ngIf="single.avgRating>0">
                                         <!-- <rating [(ngModel)]="single.avgRating" class="custom-rating-star"
@@ -122,8 +147,14 @@
                         'min-width-230px' : readingList.length > 6 && suggestedList.length ==0, 
                         'min-width-230px' : readingList.length > 6 && suggestedList.length >0} -->
 
+<<<<<<< Updated upstream
                     <div class="h-310px row col-12   pr-lg-1 pl-0 d-flex" *ngIf="readingList?.length>0">
                         <div *ngFor="let item of readingList" class="pastVcard h-100 pr-2 py-1 pl-0"
+=======
+                    <div class="h-310px toViewCont col-12 overflow-auto pr-lg-1 pl-0 d-flex"
+                        *ngIf="readingList?.length>0">
+                        <div *ngFor="let item of readingList" class="h-100 pr-2 py-1 pl-0"
+>>>>>>> Stashed changes
                             [ngClass]="{
                             ' col-xl-3 col-md-4 col-sm-6 col-12': readingList.length <= 6, 'min-width-230px' : readingList.length > 6}">
                             <div class=" h-100 card library-card mh-fit-content mb-2 ">
@@ -270,10 +301,11 @@
                                 </button>
 
                                 <div class="m-0 d-flex align-items-center justify-content-center">
-                                  
+
                                     <star-rating [value]="item.avgRating" [totalstars]="getRoundedValue(item.avgRating)"
-                                    checkedcolor="rgb(255,192,0)" uncheckedcolor="white" size="24px" [readonly]="true">
-                                </star-rating>
+                                        checkedcolor="rgb(255,192,0)" uncheckedcolor="white" size="24px"
+                                        [readonly]="true">
+                                    </star-rating>
 
                                     <span class="ml-1 mt-1" *ngIf="item.avgRating>0">{{item.avgRating}}</span>
                                 </div>

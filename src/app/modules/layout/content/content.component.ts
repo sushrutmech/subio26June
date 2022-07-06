@@ -43,6 +43,11 @@ export class ContentComponent implements OnInit {
   MyGoalList: any = []
   BusinessGoalList: any = []
 
+  end:any;
+
+  
+
+
   constructor(
     private homeService: HomeService,
     private spinner: NgxSpinnerService,

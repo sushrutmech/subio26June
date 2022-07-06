@@ -36,6 +36,7 @@ export class ViewContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.handleReadContent();
+    console.log("app view content is called ....")
   }
 
   ngOnChanges(changes: any): void {

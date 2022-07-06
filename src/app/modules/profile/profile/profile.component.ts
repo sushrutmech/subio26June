@@ -13,6 +13,7 @@ import {AuthService } from '../../../appServices/auth.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  is_edit : boolean = false;
 
   userDetail!: User ;
   userForm: FormGroup = new FormGroup({});;

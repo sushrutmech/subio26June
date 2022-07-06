@@ -13,7 +13,7 @@ import {HomeService } from '../home.service'
 @Component({
   selector: 'app-carousel-container',
   templateUrl: './carousel-container.component.html',
-  styleUrls: ['./carousel-container.component.css']
+  styleUrls: ['./carousel-container.component.scss']
 })
 export class CarouselContainerComponent implements OnInit {
 
@@ -27,10 +27,12 @@ export class CarouselContainerComponent implements OnInit {
   selectedVideoIndex: number = -1;
   timeSubscription!: Subscription;
   contentType = ProgramContentTypes;
+  selectedContent:any
 
   constructor(
     private homeService: HomeService,
     private spinner: NgxSpinnerService,
+
   ) { }
 
   ngOnInit(): void {
@@ -68,6 +70,8 @@ export class CarouselContainerComponent implements OnInit {
 
   handleWatchVideo(index: number = -1) {
     this.selectedVideoIndex = index;
+    //this.selectedContent=this.selectedVideoIndex
+    console.log(this.selectedVideoIndex)
     this.isWatchVideo = true;
   }
 

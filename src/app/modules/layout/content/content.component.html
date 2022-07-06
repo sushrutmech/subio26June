@@ -6,15 +6,18 @@
           <div class="fWrapper">
             <div class="child1">
               <div class="clock">
-                MAY
+                <strong>{{programInstance.dateStart | date : 'MMM'}}-{{programInstance.dateStart | date :
+                  'YYYY'}}</strong>
               </div>
               <div class="clock2">
                 <div class="date">
-                  19
+                 
+                  
+                  <span>{{programInstance.dateStart | date : 'd'}}</span>
 
                 </div>
                 <div class="day">
-                  Thursday
+                  <em>{{programInstance.dateStart | date : 'EEEE'}}</em>
 
                 </div>
 
@@ -42,7 +45,7 @@
             </div>
             <div class="child2">
               <div class="heading">
-                Key to Success Essentials
+                {{programInstance.programName}}
               </div>
               <div class="para">
                 "If you’re bored with life – you don’t get up every morning with a burning desire to do things – you
@@ -50,14 +53,17 @@
                 have enough goals."
               </div>
               <div class="timing1">
-                TIMINGS 09:30AM to 12:00PM
+                {{programInstance.dateStart | date : 'hh:mma'}} to {{programInstance.dateEnd | date : 'hh:mma'}}
               </div>
               <div class="btnJoin">
                 Join Now
               </div>
             </div>
             <div class="child3">
-              <div class="profileImage"></div>
+              <div>
+                <img class="profileImage" [src]="'data:image/png;base64,' + programInstance.tutorProfilePic"
+                  onerror="this.src = '../../../../assets/img/dummy-profile.png'">
+              </div>
               <div class="nameCoach" *ngIf="programInstance">
 
 
@@ -148,7 +154,7 @@
 
 
                 </mat-card>
-                
+
               </mat-tab>
 
 
@@ -524,7 +530,7 @@
                       <div>
                         <div class="cardTitle">K2A SUCCESS CHARTER </div>
                         <div class="d-flex justify-content-start mt-1 mb-1">
-<!-- 
+                          <!-- 
                           <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
                           </star-rating>
                            -->
@@ -552,7 +558,7 @@
                       <div>
                         <div class="cardTitle">K2A SUCCESS CHARTER </div>
                         <div class="d-flex justify-content-start mt-1 mb-1">
-<!-- 
+                          <!-- 
                           <star-rating class="ratingContainer" [starType]="'svg'" [rating]="3">
                           </star-rating>
                            -->
@@ -723,7 +729,7 @@
         </div>
       </div>
 
-     
+
 
 
     </mat-tab>
@@ -756,7 +762,7 @@
 
       <app-my-library-container></app-my-library-container>
 
-      
+
 
     </mat-tab>
   </mat-tab-group>
