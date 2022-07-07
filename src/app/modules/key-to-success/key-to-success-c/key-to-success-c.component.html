@@ -1,4 +1,4 @@
-<section class="container addGoalContainer">
+<section class="container addGoalContainer" [ngClass]="isUrlLib ===true?'goalWHoleC':''">
   <div class="animated fadeIn full-height py-3" *ngIf="isDataLoaded">
     <div class="row lockContainerDivGoal" *ngIf="selectedSuccessGoal">
       <!-- <div class="col-lg-12 col-md-12 col-xl-8">

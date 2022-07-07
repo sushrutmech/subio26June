@@ -7,6 +7,10 @@
   max-width: 100%;
   padding: 0px !important;
 }
+.goalWHoleC{
+  max-width: 100%;
+  padding: 40px !important;
+}
 
 .goal-item img {
   width: 25px;
@@ -75,7 +79,7 @@
   line-height: 150%;
   background-color: #0198e0 !important;
   color: #fff !important;
-  height: 41px;
+  height: 48px;
   }
 
 .reAsses > button{

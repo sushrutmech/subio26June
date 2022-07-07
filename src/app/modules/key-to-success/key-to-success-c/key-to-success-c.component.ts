@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
 import { SuccessGoal } from 'src/app/shared/interfaces/success-goal';
 import { KeyToSuccessService } from 'src/app/modules/key-to-success/key-to-success.service'
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -10,12 +10,14 @@ import { AuthService } from 'src/app/appServices/auth.service';
   templateUrl: './key-to-success-c.component.html',
   styleUrls: ['./key-to-success-c.component.css']
 })
-export class KeyToSuccessCComponent implements OnInit {
+export class KeyToSuccessCComponent implements OnInit,DoCheck {
   [x: string]: any;
 
   isDataLoaded: boolean = false;
   successGoalList: SuccessGoal[] = [];
   selectedSuccessGoal!: SuccessGoal;
+
+  isUrlLib: boolean = false;
 
   allGoalData: any
   teamGoalList: any = []
@@ -145,4 +147,9 @@ export class KeyToSuccessCComponent implements OnInit {
     this.selectedSuccessGoal = item;
   }
 
+  ngDoCheck() {   
+    let url = window.location.href;
+    this.isUrlLib = url.includes("key-to-success");
+  }
 }
+

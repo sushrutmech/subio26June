@@ -1,4 +1,4 @@
-<h1>app component is work is apply</h1>
+<div class="assessFormC">
 
 <div class="d-flex pt-3 h-100 animated fadeIn main-div" *ngIf="assessmentData && isDataLoaded">
     <div class="close-button-container" *ngIf="showCancelButton">
@@ -29,15 +29,15 @@
     <div class="d-flex flex-column h-100 justify-content-between w-100 animated fadeIn" *ngIf="formVisible">
       <div>
         <div class="d-flex flex-column h-100 justify-content-end align-items-center animated fadeIn">
-          <button class="btn btn-link d-flex flex-column align-items-center" (click)="onPreviousClick()">
+          <button class="btn mb-1 d-flex flex-column align-items-center" (click)="onPreviousClick()">
             <div class="slide-arrow up"></div>
             Questions {{questionText}}
           </button>
         </div>
       </div>
       <div class="d-flex h-100 overflow-hidden">
-        <div class="container" [@listAnimation]="currentPage">
-          <div class="row" (keypress)="eventHandler($event, question)"
+        <div class="container ratingAssesDiv" [@listAnimation]="currentPage">
+          <div class="row ratingAssesChild" (keypress)="eventHandler($event, question)"
             *ngFor="let question of questionList | paginate: { itemsPerPage: 5, currentPage: currentPage }">
             <div class="col-md-6 py-3">
               <div class="d-flex align-items-center h-100">
@@ -45,7 +45,7 @@
               </div>
             </div>
             <div class="col-md-6 py-3 rate-container" tabindex="{{question.thisOrderNo}}">
-              <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="d-flex justify-content-evenly align-items-center h-100">
                 <span class="text-muted d-sm-down-none">{{question.minimumText}}</span>
                 <div class="mx-2 text-primary" [ngClass]="{'text-danger': submitted && !question.selectedValue }">
                   <rating [(ngModel)]="question.selectedValue" class="custom-rating-star" [max]="question.maximumValue"
@@ -60,7 +60,7 @@
       </div>
       <div>
         <div class="d-flex flex-column h-100 justify-content-end align-items-center" *ngIf="!isLastPage">
-          <button class="btn btn-link d-flex flex-column align-items-center" (click)="onNextClick()">
+          <button class="btn NxtBtn d-flex flex-column align-items-center" (click)="onNextClick()">
             Next questions
             <div class="slide-arrow down"></div>
           </button>
@@ -98,3 +98,4 @@
     </div>
   </div>
   
+</div>

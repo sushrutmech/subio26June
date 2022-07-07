@@ -1,14 +1,14 @@
-<div class="row h-100 py-3 animated fadeIn">
+<div class="h-100 py-3 animated fadeIn">
   <div class="col-12">
     <div class="h-100 d-flex flex-column">
-      <div class="row p-3">
+      <div class="imgDetailDivasses">
         <div class="d-flex">
           <div class="mr-4" *ngIf="selectedSuccessGoal?.icon">
             <div class="goal-icon-container">
-              <img [src]="selectedSuccessGoal.icon | appImage">
+              <img  src="../../../../assets/images/gAsses.svg">
             </div>
           </div>
-          <div>
+          <div class="titleDL">
             <span class="font-xs">SUCCESS GOAL</span>
             <h2>{{selectedSuccessGoal?.goal}}</h2>
             <p class="text-justify">
@@ -22,7 +22,7 @@
           <div class="current-progress" [style.width]="percentage+'%'"></div>
         </div>
       </div>
-      <div class="row flex-grow-1">
+      <div class="">
          <app-assessment-form class="container-fluid" [assessmentData]="assessmentData"
             [successGoal]="selectedSuccessGoal" (onRequestClose)="handleCloseAssessmentForm()"
             (progressChange)="handleProgressChange($event)"></app-assessment-form> 
