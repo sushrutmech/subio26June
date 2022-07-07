@@ -7,7 +7,6 @@ import { Subscription, timer } from 'rxjs';
 import { ProgramContentTypes } from '../../../shared/constants/program-content-types';
 import { UserProgramContent, UserProgramInstance } from '../../../shared/interfaces/home-content';
 import { HomeService } from '../home.service';
-
 import { AuthService} from '../../../appServices/auth.service'
 import { User } from 'src/app/shared/interfaces/user';
 
@@ -57,6 +56,35 @@ export class ContentComponent implements OnInit {
   ) { 
 
     this.userSession = authService.userSession.user;
+  
+    setInterval(() => {
+
+    let now1 = moment("2022-07-07t17:00:00");
+    let now2 = moment();
+
+    let hour1 = now1.get('hour');
+    console.log(hour1)
+    let hour2 = now2.get('hour');
+    console.log(hour2)
+
+    let minute1 = now1.get('minute');
+    let minute2 = now2.get('minute');
+    let second1 = now1.get('second');
+    let second2 = now2.get('second');
+    
+    let HH =  document.getElementById('h')
+    let RHH = ((hour2 +1 ) - hour1)
+    HH!.innerHTML = String(Math.abs(RHH));
+
+    let DD =  document.getElementById('m')
+    let RDD = (60 -(minute2 - minute1))
+    DD!.innerHTML = String(Math.abs(RDD));
+
+    let SS =  document.getElementById('s')
+    let RSS = (60 - (second2 - second1))
+    SS!.innerHTML = String(Math.abs(RSS));
+
+    },1000)
   
   }
 
