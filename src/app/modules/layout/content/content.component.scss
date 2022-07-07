@@ -324,6 +324,8 @@
     padding: 16px;
 }
 
+
+
 .statusBar {
     background: #fff3cd;
     position: absolute;
@@ -426,4 +428,76 @@
       overflow-y: unset !important;
       overflow: unset !important;
   }
+    .homeContainer .mat-tab-header {
+        margin-top: -48px !important;
+    }
+    .homeContainer .mat-tab-label-active{
+        box-shadow: inset 0px 1px 0px #dee2e6, inset -1px 0px 0px #dee2e6, inset 1px 0px 0px #dee2e6;
+        border-radius: 4px 4px 0px 0px;
+        background: #fff;
+        color: #0198E0;
+    }
+
+    //images
+
+    .mat-tab-label .homeLabel::before{
+        content: "";
+        height: 24px;
+        width: 24px;
+        top: 12px;
+        left: 35px;
+        position: absolute;
+        background-image: url(../../../../assets/images/home.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .mat-tab-label-active .homeLabel::before{
+        content: "";
+        height: 24px;
+        width: 24px;
+        top: 12px;
+        left: 35px;
+        position: absolute;
+        background-image: url(../../../../assets/images/homeA.svg) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .mat-tab-label-active .goalLabel::before{
+        content: "";
+        height: 24px;
+        width: 24px;
+        top: 12px;
+        left: 22;
+        position: absolute;
+        background-image: url(../../../../assets/images/goalA.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+        .mat-tab-label-active .libraryLabel::before{
+            content: "";
+            height: 24px;
+            width: 24px;
+            top: 12px;
+            left: 22px;
+            position: absolute;
+            background-image: url(../../../../assets/images/libA.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+
+    // .mat-tab-label .homeLabel::before{
+    //     content: "";
+    //     height: 24px;
+    //     width: 24px;
+    //     top: 12px;
+    //     left: 26px;
+    //     position: absolute;
+    //     background-image: url(../../../../assets/images/home.png);
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    //     }
 }

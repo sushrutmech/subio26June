@@ -8,7 +8,7 @@ import { KeyToSuccessCComponent } from '../../key-to-success/key-to-success-c/ke
 @Component({
   selector: 'app-key-success-container',
   templateUrl: './key-success-container.component.html',
-  styleUrls: ['./key-success-container.component.css'],
+  styleUrls: ['./key-success-container.component.scss'],
  
 })
 export class KeySuccessContainerComponent implements OnInit , AfterViewInit {

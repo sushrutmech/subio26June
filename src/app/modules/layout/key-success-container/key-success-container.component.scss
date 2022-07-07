@@ -187,3 +187,16 @@
     stroke: var(--clr);
     stroke-dasharray: 440;
 }
+
+::ng-deep{
+
+  .goalContainer .mat-tab-header {
+    margin-top: 0px !important;
+}
+.goalContainer .mat-tab-label-active{
+    box-shadow: unset;
+    border-radius: none;
+    background: unset;
+    color: black;
+}
+}

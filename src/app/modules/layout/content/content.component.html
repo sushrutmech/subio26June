@@ -1,6 +1,9 @@
-<section class="my-libraryContainer">
+<section class="homeContainer my-libraryContainer">
   <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="Home">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="homeLabel">Home</span>
+    </ng-template>
       <div class="container containerImg1">
         <div class="row">
           <div class="fWrapper">
@@ -733,7 +736,10 @@
 
 
     </mat-tab>
-    <mat-tab label="My Goals">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="goalLabel">My Goals</span>
+    </ng-template>
 
       <div class="container container2">
         <div class="row">
@@ -758,8 +764,10 @@
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="My Library">
-
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="libraryLabel">My Library</span>
+    </ng-template>
       <app-my-library-container></app-my-library-container>
 
 
