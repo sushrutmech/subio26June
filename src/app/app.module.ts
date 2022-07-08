@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { TestComponent } from './test/test.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { Test2Component } from './test2/test2.component';
 
 
 
@@ -22,6 +25,9 @@ import { NgxSpinnerModule } from "ngx-spinner";
     LoginComponent,
     RegisterComponent,
     P400Component,
+    TestComponent,
+    ForgotPasswordComponent,
+    Test2Component,
     
     
     

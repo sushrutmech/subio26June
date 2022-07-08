@@ -48,6 +48,9 @@
           </div>
         </div>
         <div class="row" *ngFor="let item of successGoalList">
+          <mat-card>
+
+          
           <div *ngIf="!tabIndex">
             <div class="col-8">
               <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
@@ -79,7 +82,7 @@
 
             </div>
           </div>
-
+        </mat-card>
 
         </div>
 

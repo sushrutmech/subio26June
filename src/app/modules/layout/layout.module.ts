@@ -18,8 +18,8 @@ import { CarouselContainerComponent } from './carousel-container/carousel-contai
 
 import { RatingModule } from 'ng-starrating';
 import { WatchComponent } from './watch/watch.component';
-import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -52,6 +52,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HeaderComponent,
     ContentComponent,
     LayoutComponentComponent,
+    NgxSpinnerModule
     
   ]
 })

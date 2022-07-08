@@ -8,6 +8,7 @@ import { KeyToSuccessCComponent } from './key-to-success-c/key-to-success-c.comp
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import { AppImagePipe } from '../../shared/pipes/app-image-pipe';
 import {ComponentsModule} from '../../shared/components/components.module'
+import { AngularMaterialModule } from 'src/app/angularMaterialComponents/angular-material/angular-material.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {ComponentsModule} from '../../shared/components/components.module'
     KeyToSuccessRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ComponentsModule
+    ComponentsModule,
+    AngularMaterialModule
   ],
   exports:[
     KeyToSuccessCComponent,

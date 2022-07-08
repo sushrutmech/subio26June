@@ -21,13 +21,25 @@ export class AuthService {
 
   app_session_name: string = '_session.subio.CU';
   //currentUserSession = new BehaviorSubject(null)
+  dataCurrentUser!:any
+
+  currentUserInfo(){
+
+    let dataLocal: any = localStorage.getItem(this.app_session_name)
+    console.log("token ", dataLocal)
+    this.dataCurrentUser = JSON.parse(dataLocal)
+
+    return this.dataCurrentUser
+  }
 
 
   constructor(private http: HttpClient) {
     let dataLocal: any = localStorage.getItem(this.app_session_name)
-    let dataJoson = JSON.parse(dataLocal)
+    //console.log("token ", JSON.parse(dataLocal))
+    this.dataCurrentUser = JSON.parse(dataLocal)
+    
     //this.currentUserSession.next(dataJoson)
-    this.currentUserSession = new BehaviorSubject<LoginResponse|any>(dataJoson)
+    this.currentUserSession = new BehaviorSubject<LoginResponse|any>(this.dataCurrentUser)
 
 
   }
@@ -80,6 +92,10 @@ export class AuthService {
   changePassword(params: ChangePasswordRequest) {
     let url = `${environment.apiEndPoint}/auth/changepassword?user_id=${params.user_id}&oldpassword=${params.oldpassword}&newpassword=${params.newpassword}`
     return this.http.post<number>(url, null);
+  }
+
+  forgotPassword(email: string) {
+    return this.http.post(`${environment.apiEndPoint}/auth/ForgotPassword?email=${email}`, null, { responseType: 'text' });
   }
 
 
