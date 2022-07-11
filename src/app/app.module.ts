@@ -15,6 +15,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { TestComponent } from './test/test.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { Test2Component } from './test2/test2.component';
+import { ComponentsModule } from './shared/components/components.module';
 
 
 
@@ -44,6 +45,7 @@ import { Test2Component } from './test2/test2.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
+    ComponentsModule
 
     
     

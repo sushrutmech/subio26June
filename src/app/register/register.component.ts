@@ -40,6 +40,9 @@ export class RegisterComponent implements OnInit {
 
   }
 
+  get formControls():any {
+    return this.registerForm.controls;
+  }
 
   // method for submitting value by sign up api
   onSubmit() {

@@ -82,7 +82,7 @@ export class ContentComponent implements OnInit {
 
     setInterval(() => {
 
-      let now1 = moment("2022-07-15t10:00:00");
+      let now1 = moment("2022-07-07t10:00:00");
       let now2 = moment();
 
       let hour1 = now1.get('hour');

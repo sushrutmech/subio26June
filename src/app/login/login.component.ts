@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
   submitted: boolean = false;
   defauluRedirectURL: string = '/layout/home'
 
+  resData:any
+
   constructor(private fb: FormBuilder,
     private spinner: NgxSpinnerService,
     private authService: AuthService,
@@ -42,35 +44,40 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || this.defauluRedirectURL;
   }
 
-  onSubmit() {
+  get f(): any { return this.loginForm.controls; }
+
+  onSubmit(event: any) {
     console.log("login inn ", this.loginForm.value)
 
     this.submitted = true;
+    if (this.loginForm.valid) {
+      this.spinner.show();
+      var params: LoginRequest = {
+        emailAddress: this.loginForm.value.username,
+        password: this.loginForm.value.password
+      };
 
-    this.spinner.show();
-    var params: LoginRequest = {
-      emailAddress: this.loginForm.value.username,
-      password: this.loginForm.value.password
-    };
+      this.authService.login(params).subscribe({
+        next: (res: any) => {
+          alert("lonin sucessfully....")
+          this.spinner.hide();
+          this.resData=res
+          this.router.navigate([this.returnUrl]);
+          location.reload()
 
-    this.authService.login(params).subscribe({next:(res:any)=>{
-      alert("lonin sucessfully....")
-      this.spinner.hide();
-      this.router.navigate([this.returnUrl]);
-      location.reload()
-     
-    },
-    error:err => {
-      //console.log(err)
-      alert("invallid credential ......" + err)
-      this.spinner.hide();
+        },
+        error: err => {
+          //console.log(err)
+          //alert("invallid credential ......" + err)
+          this.resData=err
+         
+          //console.log("//**", this.resData)
+          this.spinner.hide();
+        }
+      })
     }
-
-
-  })
-    
-
-
   }
+
+ 
 
 }

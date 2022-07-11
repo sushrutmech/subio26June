@@ -1,59 +1,68 @@
-<div class="app-body" style="width: 100vw;height: 100vh;">
-  <main class="main d-flex align-items-center loginCardContainer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 mx-auto">
-          <div class="card">
-            <div class="card-body">
-              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
-                <div class="d-flex justify-content-center mb-3">
-                  <img src="../../../assets/images/subio-logo.svg" width="150" height="65" />
-                </div>
-                <!-- <h1>Login</h1> -->
-                <p class="text-muted">Sign In to your account</p>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                  </div>
-                  <input type="text" class="form-control" placeholder="Username" autocomplete="off"
-                    formControlName="username">
-                  <div class="invalid-feedback">
-                    Please enter your Username
-                  </div>
-                </div>
-                <div class="input-group mb-1">
-                  <div class="input-group-prepend">
-                  </div>
-                  <input type="password" class="form-control" placeholder="Password" autocomplete="off"
-                    formControlName="password">
-                  <div class="invalid-feedback">
-                    Please enter your Password
-                  </div>
+<div class="container-fluid classFigma">
+    <app-alert-box *ngIf="resData" [resData]="resData"></app-alert-box>
+    
+  <div class="d-flex flex-wrap justify-content-evenly">
+        
+          <div class="">
+              <div class="">
+                  <img src="../../assets/logo/subio.svg" alt="" width="224.6px" height="100px">
+  
+              </div>
+              <div class="textSubio">
+                  <p class="marPad0">
+                      Subio Help you to achieve personal,
+                      team or business goal in your Life.
+  
+                  </p>
+              </div>
 
-                </div>
-                <!-- <div class="col-12 text-ce mb-3 d-flex justify-content-end">
-                    <button type="button" class="btn btn-link px-0" [routerLink]="'/forgot-password'">Forgot
-                      password?</button>
-                  </div> -->
-                <div class="row">
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-block px-4">Login</button>
-                  </div>
-                  <div class="col-12 d-flex align-items-center justify-content-center mt-4">
-                    <span>Don't have an account?&nbsp;</span>
-                    <button type="button" class="btn btn-link px-0" [routerLink]="'/register'">
-                      Register Now</button>
-                  </div>
-                </div>
-              </form>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </main>
+          
+      
+      
+
+          <div class="">
+              <div class="formCard">
+                  <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)" novalidate>
+                      <div class="formElement">
+                          <div class="inputEmail">
+                            <input type="text" class="form-control" placeholder="Username" autocomplete="off"
+                            formControlName="username" [class.is-invalid]="submitted && f.username.errors">
+                            <div class="invalid-feedback">
+                                Please enter your Username
+                              </div>
+                          </div>
+  
+                          <div class="inputPass">
+                            <input type="password" class="form-control" placeholder="Password" autocomplete="off"
+                            formControlName="password" [class.is-invalid]="submitted && f.password.errors">
+                            <div class="invalid-feedback">
+                                Please enter your Password
+                              </div>
+                          </div>
+  
+                          <div class="loginBtn">
+                              <button type="submit" class="btn btnBlock" [disabled]="submitted && loginForm.invalid">Log In</button>
+                          </div>
+  
+                          <div class="frgtPass">
+                              <p class="marPad0" [routerLink]="'/forgot-password'" >Forgot Password </p>
+                          </div>
+  
+                          <div class="regBlock">
+                              <p class="marPad0">Don't have an account?</p>
+                              <div class="regBtn">
+                                  <button [routerLink]="'/register'" type="button" class="btn btnRegister ">Register Now</button>
+                              </div>
+                          </div>
+              
+                      </div>
+                  </form>
+               </div>
+          </div>
+      
+  </div>
+
+
+
 </div>
-
-
-<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
-  <p style="color: rgb(198, 3, 3)"> Loading... </p>
-</ngx-spinner>

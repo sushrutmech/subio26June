@@ -18,6 +18,7 @@ import { VgStreamingModule } from '@videogular/ngx-videogular/streaming';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { ViewContentComponent } from './view-content/view-content.component';
 import { SuccessKeyLockComponent } from './success-key-lock/success-key-lock.component';
+import { AlertBoxComponent } from './alert-box/alert-box.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { SuccessKeyLockComponent } from './success-key-lock/success-key-lock.com
     VideoPlayerComponent,
     PdfViewerComponent,
     ViewContentComponent,
-    SuccessKeyLockComponent
+    SuccessKeyLockComponent,
+    AlertBoxComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,8 @@ import { SuccessKeyLockComponent } from './success-key-lock/success-key-lock.com
     VideoPlayerComponent,
     PdfViewerComponent,
     ViewContentComponent,
-    SuccessKeyLockComponent
+    SuccessKeyLockComponent,
+    AlertBoxComponent
   ]
 })
 export class ComponentsModule { }

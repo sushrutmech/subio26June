@@ -56,7 +56,7 @@
 }
 
 .inputPass {
-    padding: 0px 0px 24px 0px;
+    padding: 0px 0px 14px 0px;
 
 }
 
@@ -149,4 +149,35 @@
     /* identical to box height, or 24px */
     /* sgray-200 */
     color: #29373D;
+    text-align: center;
+}
+
+.regTitle2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 350;
+    font-size: 24px;
+    line-height: 120%;
+    /* or 29px */
+    display: flex;
+    align-items: center;
+    color: #000000;
+    padding: 0px 0px 17px 0px;
+
+}
+
+
+/* flex for  */
+
+div.parrent{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1px -7px 8px -4px;
+    padding: 0;
+}
+
+div.child {
+    flex: 30%;
+    margin: 5px 9px 8px 5px;
+    padding: 0;
 }

@@ -28,7 +28,7 @@ export class ForgotPasswordComponent implements OnInit {
     })
   }
 
-  get formControls() {
+  get formControls():any {
     return this.userForm.controls;
   }
 
