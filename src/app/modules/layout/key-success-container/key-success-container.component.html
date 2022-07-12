@@ -3,7 +3,7 @@
     MY GOALS
   </div>
   <div>
-    <button mat-raised-button color="primary" routerLink="/key-to-success/">Add New Goal </button>
+    <button mat-raised-button color="primary" (click)="addGoalFun()" >Add New Goal </button>
   </div>
 </div>
 
@@ -13,63 +13,14 @@
   <div class="goalContainer">
     <mat-tab-group (selectedTabChange)="selectedTabChange($event)">
       <mat-tab label="All Goals">
-        <app-key-to-success-c [tabIndex]="tabIndex"></app-key-to-success-c>
-        <!-- <app-goal></app-goal>
-            <app-assessment></app-assessment> -->
+
+        <app-key-to-success-c *ngIf="addGoalForm===false" [tabIndex]="tabIndex"></app-key-to-success-c>
+
+         <app-goal *ngIf="addGoalForm===true"></app-goal>
+
+            <!-- <app-assessment *ngIf="addGoalForm===true"></app-assessment>  -->
        
         <mat-card>
-
-          <!-- <div class="allGoalList" *ngIf="isDataLoaded">
-
-            <div class="col-md-8 my-3" *ngIf="successGoalList.length > 0">
-              <div class="row">
-                <div class="col-8">
-                  <div class="goal-header">
-                    <span>Success Goal</span>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="goal-header">
-                    <span>Last assessment</span>
-                  </div>
-                </div>
-              </div>
-              <div class="row"  *ngFor="let item of successGoalList" (click)="setSuccessGoal(item)">
-
-                <mat-card-title class="d-flex justify-content-between">
-                  <div class="d-flex gap-1">
-                    <div class="titleCard">
-                       Goals
-                    </div>
-                    <div class="progressStatusCard">
-                      In Progress
-                    </div>
-                  </div>
-                  <div>
-                    <img src="../../../assets/images/Vector.svg" alt="" srcset="">
-                  </div>
-                </mat-card-title>
-   
-                <mat-card-subtitle class="titleText">
-                <div class="col-8">
-                  <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
-                    >
-                    <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
-                    <span>{{item.goal}}</span>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="goal-item-value" [class.active]="item === selectedSuccessGoal"
-                    (click)="setSuccessGoal(item)">
-                    <span>{{item.dateTakenDescription}}</span>
-                  </div>
-                </div>
-              </mat-card-subtitle>
-              </div>
-            </div>
-
-
-          </div> -->
 
 
         </mat-card>

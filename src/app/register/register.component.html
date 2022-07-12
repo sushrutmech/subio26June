@@ -40,8 +40,16 @@
               <div class="inputEmail child">
                 <input type="text" class="form-control" id="firstName" placeholder="First Name"
                   formControlName="firstName" [class.is-invalid]="submitted && formControls.firstName.errors">
-                <div class="invalid-feedback">
+                <div class="invalid-feedback"
+                  [class.is-invalid]="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)">
                   Please enter your First name
+                </div>
+                <div
+                  *ngIf="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="formControls.firstName.errors?.['required']">
+                    Please enter your First name
+                  </div>
                 </div>
               </div>
 
@@ -49,15 +57,26 @@
               <div class="inputPass child">
                 <input type="text" class="form-control" id="lastName" placeholder="last name" formControlName="lastName"
                   [class.is-invalid]="submitted && formControls.lastName.errors">
-                <div class="invalid-feedback">
+                <div class="invalid-feedback"
+                  [class.is-invalid]="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)">
                   Please enter your Last name
                 </div>
+
+                <div
+                  *ngIf="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="formControls.firstName.errors?.['required']">
+                    Please enter your last name
+                  </div>
+                </div>
+
               </div>
 
               <div class="inputPass child">
                 <input type="text" class="form-control" id="preferredName" placeholder="Preferred Name"
                   formControlName="preferredName" [class.is-invalid]="submitted && formControls.preferredName.errors">
-                <div class="invalid-feedback">
+                <div class="invalid-feedback"
+                  [class.is-invalid]="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)">
                   Please enter your Preffered name
                 </div>
               </div>
@@ -65,9 +84,20 @@
               <div class="inputPass child">
                 <input type="number" class="form-control" id="contactNumber" placeholder="conatact number"
                   formControlName="contactNumber" [class.is-invalid]="submitted && formControls.contactNumber.errors" />
-                <div class="invalid-feedback">
+                <div class="invalid-feedback"
+                  [class.is-invalid]="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)">
                   Please enter your Contact number
                 </div>
+
+                <div
+                  *ngIf="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)"
+                  class="invalid-feedback">
+                  <div *ngIf="formControls.firstName.errors?.['required']">
+                    Please enter your Contact Number
+                  </div>
+                </div>
+
+
               </div>
 
             </div>
@@ -75,16 +105,35 @@
             <div class="inputPass">
               <input type="text" class="form-control" id="emailAddress" placeholder="Email adress"
                 formControlName="emailAddress" autocomplete="off">
-              <div class="invalid-feedback" [class.is-invalid]="submitted && formControls.emailAddress.errors">
+              <div class="invalid-feedback"
+                [class.is-invalid]="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)">
                 Please enter your a valid Email address
               </div>
+
+              <div
+                *ngIf="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)"
+                class="invalid-feedback">
+                <div *ngIf="formControls.firstName.errors?.['required']">
+                  Please enter your email
+                </div>
+              </div>
+
+
             </div>
 
             <div class="inputPass">
               <input type="password" class="form-control" id="password" autocomplete="off" placeholder="password"
                 formControlName="password" [class.is-invalid]="submitted && formControls.password.errors">
-              <div class="invalid-feedback">
+              <div class="invalid-feedback"
+                [class.is-invalid]="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)">
                 Please enter your New Password
+              </div>
+              <div
+                *ngIf="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)"
+                class="invalid-feedback">
+                <div *ngIf="formControls.firstName.errors?.['required']">
+                  Please enter your New Password
+                </div>
               </div>
             </div>
 
@@ -92,13 +141,22 @@
               <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password"
                 formControlName="confirmPassword"
                 [class.is-invalid]="(submitted && formControls.confirmPassword.errors) ">
-              <div class="invalid-feedback" *ngIf="submitted && formControls.confirmPassword.errors?.required">
+              <div class="invalid-feedback"
+                [class.is-invalid]="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)"
+                *ngIf="submitted && formControls.confirmPassword.errors?.required">
                 Please enter your Confirm Password
+              </div>
+              <div
+                *ngIf="formControls.firstName.invalid && (formControls.firstName.dirty || formControls.firstName.touched)"
+                class="invalid-feedback">
+                <div *ngIf="formControls.firstName.errors?.['required']">
+                  Please enter your Confirm Password
+                </div>
               </div>
             </div>
 
             <div class="loginBtn">
-              <button type="submit" class="btn btnBlock"
+              <button type="submit" class="btn btnBlock" (click)="validate()"
                 [disabled]="submitted && registerForm.invalid">Register</button>
             </div>
 

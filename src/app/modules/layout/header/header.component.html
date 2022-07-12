@@ -77,6 +77,24 @@
         </div>
     </div>
 
+    <ng-container *ngIf=" router.url.includes('key-to-success') || router.url.includes('/layout/home/goal/') || router.url.includes('my-library') ">
+        
+        <div class="wrapper">
+            <div class="item" [routerLink]="'/layout/home'" >
+                Home
+            </div>
+            <div class="item" [routerLink]="'/key-to-success'">
+                My Goals
+            </div>
+            <div class="item"  [routerLink]="'my-library'">
+                My Library
+                
+            </div>
+          
+        </div>
+
+    </ng-container>
+
 </div>
 
 <router-outlet></router-outlet>

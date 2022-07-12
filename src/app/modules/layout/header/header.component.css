@@ -41,3 +41,32 @@
     font-weight: 400;
     line-height: 1.25;
 }
+
+/* flex for header tab Navigation button  */
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3px 0px 0px 33px
+  }
+  
+  .item {
+    width: 148px;
+    height: 52px;
+    margin-bottom: 2%;
+    
+    padding: 16px 16px 16px 16px;
+    text-align: center;
+    box-shadow: inset 0px 1px 0px #dee2e6, inset -1px 0px 0px #dee2e6, inset 1px 0px 0px #dee2e6;
+    border-radius: 4px 4px 0px 0px;
+    background: #fff;
+    color: #0198E0;
+  }
+  
+  
+
+
+
+
+/*  */

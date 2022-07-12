@@ -66,7 +66,7 @@ export class AssessmentComponent implements OnInit {
   }
 
   handleCloseAssessmentForm() {
-    this.router.navigate(['my-keys-to-success']);
+    this.router.navigate(['key-to-success']);
   }
 
 }

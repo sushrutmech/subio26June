@@ -6,8 +6,8 @@
       </div> -->
 
       <div class="col-lg-12 col-md-12 col-xl-8">
-        <app-success-key-lock [userSuccessID]="selectedSuccessGoal.userSuccessID"></app-success-key-lock> 
-     </div>
+        <app-success-key-lock [userSuccessID]="selectedSuccessGoal.userSuccessID"></app-success-key-lock>
+      </div>
       <div class="col-lg-12 col-md-12 col-xl-4">
         <div class="row" *ngIf="selectedSuccessGoal">
           <div class="col-md-12">
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8 my-3" *ngIf="successGoalList.length > 0">
+      <div class="col" *ngIf="successGoalList.length > 0">
         <div class="row">
           <div class="col-8">
             <div class="goal-header">
@@ -47,44 +47,88 @@
             </div>
           </div>
         </div>
+
+        
         <div class="row" *ngFor="let item of successGoalList">
-          <mat-card class="goalContainer">
-
           
-          <div *ngIf="!tabIndex">
-            <div class="col-8">
-              <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
-                (click)="setSuccessGoal(item)">
-                <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
-                <span>{{item.goal}}</span>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="goal-item-value" [class.active]="item === selectedSuccessGoal" (click)="setSuccessGoal(item)">
-                <span>{{item.dateTakenDescription}}</span>
-              </div>
 
-            </div>
-          </div>
+          <!-- <mat-card class="goalContainer"  *ngIf="item.goal.length>0" >
+          </mat-card> -->
 
-          <div *ngIf="tabIndex && item.successGoalTypeId===tabIndex">
-            <div class="col-8">
-              <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
-                (click)="setSuccessGoal(item)">
-                <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
-                <span>{{item.goal}}</span>
+
+            <div *ngIf="!tabIndex"  class="goalContainer">
+              <mat-card-title class="d-flex justify-content-between">
+                <div class="d-flex gap-1">
+                  <div class="titleCard">
+                    My Goals
+                  </div>
+                  <div class="progressStatusCard">
+                    In Progress
+                  </div>
+                </div>
+                <div>
+                  <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
+                </div>
+              </mat-card-title>
+              <div class="col-8">
+                <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
+                  (click)="setSuccessGoal(item)">
+                  <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
+                  <span>{{item.goal}}</span>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="goal-item-value" [class.active]="item === selectedSuccessGoal"
+                  (click)="setSuccessGoal(item)">
+                  <span>{{item.dateTakenDescription}}</span>
+                </div>
+
               </div>
             </div>
-            <div class="col-4">
-              <div class="goal-item-value" [class.active]="item === selectedSuccessGoal" (click)="setSuccessGoal(item)">
-                <span>{{item.dateTakenDescription}}</span>
-              </div>
 
+           
+
+            <div class="goalContainer" *ngIf="tabIndex && item.successGoalTypeId===tabIndex">
+              <mat-card-title class="d-flex justify-content-between">
+                <div class="d-flex gap-1">
+                  <div class="titleCard">
+                    <div [ngSwitch]="tabIndex">
+                      <div *ngSwitchCase=1>My Goals</div>
+                      <div *ngSwitchCase=2>My BuisnessGoals</div>
+                      <div *ngSwitchCase=3>My TeamGoals</div>
+                      <div *ngSwitchDefault>no goals</div>
+                    </div>
+                   
+                  </div>
+                 
+                  <div class="progressStatusCard">
+                    In Progress
+                  </div>
+                </div>
+                <div>
+                  <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
+                </div>
+              </mat-card-title>
+              <div class="col-8 " >
+                <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
+                  (click)="setSuccessGoal(item)">
+                  <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
+                  <span>{{item.goal}}</span>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="goal-item-value" [class.active]="item === selectedSuccessGoal"
+                  (click)="setSuccessGoal(item)">
+                  <span>{{item.dateTakenDescription}}</span>
+                </div>
+
+              </div>
             </div>
-          </div>
-        </mat-card>
+          
+          
 
         </div>
+      
 
 
 

@@ -10,6 +10,7 @@ const routes: Routes = [
   {
     path: '',
     component: KeyToSuccessCComponent,
+    data: { state: 'my-keys-to-success' }
     
   },
   

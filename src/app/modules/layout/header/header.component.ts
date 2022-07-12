@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private AuthService:AuthService,
-    private router: Router,
+    public router: Router,
     private spinner: NgxSpinnerService,
 
   ) { 

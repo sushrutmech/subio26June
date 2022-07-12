@@ -24,6 +24,9 @@ export class GoalComponent implements OnInit {
   userSession!: User;
   submitted: boolean = false;
   isNewGoal: boolean = false;
+  addGoalAssessmentForm=false
+
+
   Id:any;
   constructor(
     private router: Router,
@@ -130,6 +133,7 @@ export class GoalComponent implements OnInit {
         console.log(rows)
         this.submitted = false;
         this.spinner.hide();
+        //this.addGoalAssessmentForm=!this.addGoalAssessmentForm
         this.router.navigate(["key-to-success", 'goal', rows.userSuccessID, 'assessment'],);
       })
 

@@ -78,6 +78,15 @@ export class RegisterComponent implements OnInit {
 
   }
 
+  public validate(): void {
+    if (this.registerForm.invalid) {
+      for (const control of Object.keys(this.registerForm.controls)) {
+        this.registerForm.controls[control].markAsTouched();
+      }
+      return;
+    }
+  }
+
 
 
 

@@ -19,6 +19,7 @@ export class KeySuccessContainerComponent implements OnInit , AfterViewInit {
   isDataLoaded: boolean = false;
   successGoalList: SuccessGoal[] = [];
   selectedSuccessGoal!: SuccessGoal;
+  addGoalForm=false
 
   i!: number
   allGoalData: any
@@ -54,9 +55,11 @@ export class KeySuccessContainerComponent implements OnInit , AfterViewInit {
 
     this.child.getSuccessGoalList();
 
-    // console.log("+++", this.getTeamGoakList())
-    // console.log("+++---", this.getMyGoalList())
-    // console.log("++--**//", this.getBusinessGoalList())
+    
+  }
+
+  addGoalFun(){
+    this.addGoalForm = !this.addGoalForm
   }
 
 

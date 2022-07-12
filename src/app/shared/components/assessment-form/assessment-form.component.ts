@@ -153,6 +153,7 @@ export class AssessmentFormComponent implements OnInit {
   }
 
   handleCancelClick() {
+    this.route.navigate(["/key-to-success"])
     this.onRequestClose.emit();
   }
 
