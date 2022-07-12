@@ -10,9 +10,21 @@
 .marPad0 {
   margin: 0;
   padding: 0;
+
 }
-
-
+.regText{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 150%;
+}
+.textLeftD{
+  line-height: 150%;
+}
+.inputEmail > input ,.inputPass > input {
+  height: 48px;
+}
 .wrappSubio{
   padding: 388px 0px 1335px 315px;
 }
@@ -26,14 +38,13 @@
 
 .textSubio {
   width: 394px;
-  height: 63px;
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 24px;
-  line-height: 100%;
   /* or 24px */
   color: #000000;
+  margin-top: 32px;
 }
 
 .formCard {
@@ -121,5 +132,6 @@
   /* identical to box height, or 30px */
   /* Gray/White */
   color: #FFFFFF;
-
+  padding: 9px 17px;
+  border-radius: 4.8px;
 }

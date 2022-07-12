@@ -11,7 +11,9 @@
     margin: 0;
     padding: 0;
 }
-
+.textLeftD{
+    line-height: 150%;
+  }
 
 .wrappSubio {
     padding: 388px 0px 1335px 315px;
@@ -26,15 +28,14 @@
 
 .textSubio {
     width: 394px;
-    height: 63px;
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 450;
+    font-weight: 500;
     font-size: 24px;
-    line-height: 100%;
     /* or 24px */
     color: #000000;
-}
+    margin-top: 32px;
+  }
 
 .formCard {
     width: 442px;
@@ -138,6 +139,7 @@
     align-items: center;
 
     color: #000000;
+    margin-left: 48px;
 }
 
 .allLogin {
@@ -163,10 +165,13 @@
     align-items: center;
     color: #000000;
     padding: 0px 0px 17px 0px;
-
+    margin-left: 48px;
+    margin-top: 3px;
 }
 
-
+.inputEmail > input ,.inputPass > input {
+    height: 48px;
+}
 /* flex for  */
 
 div.parrent{
