@@ -304,8 +304,20 @@
                                             [readonly]="true">
                                         </star-rating>
     
-                                        <span class="ml-1 mt-1" *ngIf="item.avgRating>0">{{item.avgRating}}</span>
+                                        <!-- <span class="ml-1 mt-1" *ngIf="item.avgRating>0">{{item.avgRating}}</span> -->
                                     </div>
+                                    <div>
+                                        <p class="cardDescDiv">{{item.contentBlurb}}</p>
+                                      </div>
+              
+                                      <div style="text-align: center;"  (click)="handleWatchVideo(item)">
+                                        <button type="button" class="cardBtnBottom btn btn-primary" *ngIf="item.contentTypeName=='Video'">watch
+                                          now</button>
+                                        <button type="button" class="cardBtnBottom btn btn-primary"
+                                          *ngIf="item.contentTypeName== 'PDF Document'">Read Now</button>
+              
+                                      </div>
+
                                 </div>
                             </div>
                         </div>

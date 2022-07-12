@@ -119,12 +119,8 @@ export class ContentComponent implements OnInit {
     this.getTeamGoakList();
     this.getAllContent();
     
-    console.log("**library data --" , this.getAllContent())
-
-    this.myLibraryService.getContentList().subscribe(result => {
-      console.log("**library data --", result)
-    })
-
+   console.log("goal list " , 
+   this.myKeysToSuccessService.getGoalList().subscribe(results => {console.log(results)}))
 
     this.searchForm = this.fb.group({
       searchInput: '',

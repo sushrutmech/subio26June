@@ -3,7 +3,7 @@
     MY GOALS
   </div>
   <div>
-    <button mat-raised-button color="primary" (click)="addGoalFun()" >Add New Goal </button>
+    <button mat-raised-button color="primary" routerLink="/key-to-success/goal" >Add New Goal </button>
   </div>
 </div>
 
@@ -28,32 +28,12 @@
 
 
 
-      <mat-tab label="MyGoals">
+      <mat-tab label="My Goals">
         <mat-card>
 
           <app-key-to-success-c [tabIndex]="tabIndex" ></app-key-to-success-c>
 
-          <!-- <div class="listMayGoals" *ngFor="let item of MyGoalList">
-            <mat-card-title class="d-flex justify-content-between">
-              <div class="d-flex gap-1">
-                <div class="titleCard">
-                  {{item.goal}}
-                </div>
-                <div class="progressStatusCard">
-                  In Progress
-                </div>
-
-              </div>
-              <div>
-                <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
-              </div>
-            </mat-card-title>
-            <mat-card-subtitle class="titleText">
-              <div> {{item.goalDescription}}</div>
-              Deliver customer service and support with an 85 percent or higher satisfaction rating.
-            </mat-card-subtitle>
-
-          </div> -->
+        
 
         </mat-card>
       </mat-tab>
@@ -63,28 +43,7 @@
 
           <app-key-to-success-c [tabIndex]="tabIndex"></app-key-to-success-c>
 
-          <!-- <div class="teamGoalList" *ngFor="let item of teamGoalList">
-
-            <mat-card-title class="d-flex justify-content-between">
-              <div class="d-flex gap-1">
-                <div class="titleCard">
-                  {{item.goal}}
-                </div>
-                <div class="progressStatusCard">
-                  In Progress
-                </div>
-              </div>
-              <div>
-                <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
-              </div>
-            </mat-card-title>
-            <mat-card-subtitle class="titleText">
-              <div> {{item.goalDescription}}</div>
-              Deliver customer service and support with an 85 percent or higher satisfaction rating.
-            </mat-card-subtitle>
-
-          </div> -->
-
+         
         </mat-card>
       </mat-tab>
       <mat-tab label=" My Team Goals">
@@ -93,27 +52,7 @@
           <app-key-to-success-c [tabIndex]="tabIndex"></app-key-to-success-c>
 
 
-          <!-- <div class="businessGoalList" *ngFor="let item of BusinessGoalList">
-
-            <mat-card-title class="d-flex justify-content-between">
-              <div class="d-flex gap-1">
-                <div class="titleCard">
-                  {{item.goal}}
-                </div>
-                <div class="progressStatusCard">
-                  In Progress
-                </div>
-              </div>
-              <div>
-                <img src="../../../../assets/images/Vector.svg" alt="" srcset="">
-              </div>
-            </mat-card-title>
-            <mat-card-subtitle class="titleText">
-              <div> {{item.goalDescription}}</div>
-              Deliver customer service and support with an 85 percent or higher satisfaction rating.
-            </mat-card-subtitle>
-
-          </div> -->
+          
 
 
 

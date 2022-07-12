@@ -35,21 +35,7 @@
     </div>
     <div class="row">
       <div class="col" *ngIf="successGoalList.length > 0">
-        <div class="row">
-          <div class="col-8">
-            <div class="goal-header">
-              <span>Success Goal</span>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="goal-header">
-              <span>Last assessment</span>
-            </div>
-          </div>
-        </div>
-
-        
-        <div class="row" *ngFor="let item of successGoalList">
+          <div class="row" *ngFor="let item of successGoalList">
           
 
           <!-- <mat-card class="goalContainer"  *ngIf="item.goal.length>0" >
@@ -59,9 +45,17 @@
             <div *ngIf="!tabIndex"  class="goalContainer">
               <mat-card-title class="d-flex justify-content-between">
                 <div class="d-flex gap-1">
-                  <div class="titleCard">
+
+                  <div *ngIf="item.successGoalTypeId==1" class="titleCard">
                     My Goals
                   </div>
+                  <div *ngIf="item.successGoalTypeId==2" class="titleCardBuisnessGoal">
+                    My Business Goals
+                  </div>
+                  <div *ngIf="item.successGoalTypeId==3" class="titleCardTeamGoal">
+                    My Team Goals
+                  </div>
+
                   <div class="progressStatusCard">
                     In Progress
                   </div>
@@ -77,13 +71,7 @@
                   <span>{{item.goal}}</span>
                 </div>
               </div>
-              <!-- <div class="col-4">
-                <div class="goal-item-value" [class.active]="item === selectedSuccessGoal"
-                  (click)="setSuccessGoal(item)">
-                  <span>{{item.dateTakenDescription}}</span>
-                </div>
-
-              </div> -->
+           
             </div>
 
            
@@ -91,11 +79,11 @@
             <div class="goalContainer" *ngIf="tabIndex && item.successGoalTypeId===tabIndex">
               <mat-card-title class="d-flex justify-content-between">
                 <div class="d-flex gap-1">
-                  <div class="titleCard">
+                  <div class="">
                     <div [ngSwitch]="tabIndex">
-                      <div *ngSwitchCase=1>My Goals</div>
-                      <div *ngSwitchCase=2>My BuisnessGoals</div>
-                      <div *ngSwitchCase=3>My TeamGoals</div>
+                      <div *ngSwitchCase=1 class="titleCard">My Goals</div>
+                      <div *ngSwitchCase=2 class="titleCardBuisnessGoal">My Buisness Goals</div>
+                      <div *ngSwitchCase=3 class="titleCardTeamGoal">My Team Goals</div>
                       <div *ngSwitchDefault>no goals</div>
                     </div>
                    
@@ -116,13 +104,7 @@
                   <span>{{item.goal}}</span>
                 </div>
               </div>
-              <!-- <div class="col-4">
-                <div class="goal-item-value" [class.active]="item === selectedSuccessGoal"
-                  (click)="setSuccessGoal(item)">
-                  <span>{{item.dateTakenDescription}}</span>
-                </div>
-
-              </div> -->
+            
             </div>
           
           

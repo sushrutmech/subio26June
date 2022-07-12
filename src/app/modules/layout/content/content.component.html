@@ -122,9 +122,17 @@
 
                         <mat-card-title class="d-flex justify-content-between">
                           <div class="d-flex gap-1">
-                            <div class="titleCard">
-                              Goals
-                            </div>
+
+                            <div *ngIf="item.successGoalTypeId==1" class="titleCard">
+                                My Goals
+                              </div>
+                              <div *ngIf="item.successGoalTypeId==2" class="titleCardBuisnessGoal">
+                                My Business Goals
+                              </div>
+                              <div *ngIf="item.successGoalTypeId==3" class="titleCardTeamGoal">
+                                My Team Goals
+                              </div>
+
                             <div class="progressStatusCard">
                               In Progress
                             </div>
@@ -198,7 +206,7 @@
 
                     <mat-card-title class="d-flex justify-content-between">
                       <div class="d-flex gap-1">
-                        <div class="titleCard">
+                        <div class="titleCardTeamGoal">
                           My Team Goals
                         </div>
                         <div class="progressStatusCard">
@@ -232,7 +240,7 @@
 
                     <mat-card-title class="d-flex justify-content-between">
                       <div class="d-flex gap-1">
-                        <div class="titleCard">
+                        <div class="titleCardBuisnessGoal">
                           My BusinessGoals
                         </div>
                         <div class="progressStatusCard">
