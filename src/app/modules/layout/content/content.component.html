@@ -20,7 +20,7 @@
 
                 </div>
                 <div class="day">
-                  <em>{{programInstance.dateStart | date : 'EEEE'}}</em>
+                  <p>{{programInstance.dateStart | date : 'EEEE'}}</p>
 
                 </div>
 
@@ -28,15 +28,15 @@
 
               <div class="timing">
                 <div class="timerContainer">
-                  <div class="days">
+                  <div class="days d1">
                     <div id="h" class="times">15</div>
                     <div id="calender">Days</div>
                   </div>
-                  <div class="days">
+                  <div class="days d2">
                     <div id="m" class="times">15</div>
                     <div id="calender">Hours</div>
                   </div>
-                  <div class="days">
+                  <div class="days d3">
                     <div id="s" class="times">15</div>
                     <div id="calender">Minutes</div>
                   </div>
@@ -56,7 +56,10 @@
                 have enough goals."
               </div>
               <div class="timing1">
+                <div>TIMINGS</div>
+                <div>
                 {{programInstance.dateStart | date : 'hh:mma'}} to {{programInstance.dateEnd | date : 'hh:mma'}}
+                </div>
               </div>
               <div class="btnJoin">
                 Join Now
@@ -448,13 +451,13 @@
                               </div>
 
                               <div>
-                                <p>{{item.contentBlurb}}</p>
+                                <p class="cardDescDiv">{{item.contentBlurb}}</p>
                               </div>
 
-                              <div class="" (click)="handleWatchVideoo(item)">
-                                <button type="button" class="btn btn-primary"
+                              <div style="text-align: center;" (click)="handleWatchVideoo(item)">
+                                <button type="button" class="cardBtnBottom btn btn-primary"
                                 *ngIf="item.contentTypeName=='Video'">watch now</button>
-                                <button type="button" class="btn btn-primary"
+                                <button type="button" class="cardBtnBottom btn btn-primary"
                                 *ngIf="item.contentTypeName== 'PDF Document'">Read Now</button>
                                 
                               </div>

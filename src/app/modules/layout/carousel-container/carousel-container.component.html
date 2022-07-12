@@ -24,7 +24,7 @@
                       </div>
                     </div> -->
           <div class="">
-            <div class="card">
+            <div class="card carouselCardDiv">
               <div class="card-header text-white p-0 overlay">
                 <div class="item-stepno-badge">
                   <!-- {{item.stepNo}} -->
@@ -41,20 +41,20 @@
                 <img [src]="'data:image/png;base64,'+item.contentImage"
                   onerror="this.src='../../../../assets/img/default-image.png'" class="card-img-top">
               </div>
-              <div class="card-body text-center">
+              <div class="card-body">
                 <h5 class="card-title">{{item.stepName}}</h5>
-                <p class="card-text">{{item.contentBlurb}}</p>
+                <p class="card-text cardDescDiv">{{item.contentBlurb}}</p>
               </div>
-              <div class="card-footer text-center">
-                <button *ngIf="nextVideoIndex === i" class="btn btn-block btn-primary text-center" (click)="handleWatchVideo()">
-                  <div [ngSwitch]="item.contenttypeid">
-                    <span *ngSwitchCase="contentType.Video">WATCH NOW</span>
-                    <span *ngSwitchCase="contentType.PDF_Document">VIEW NOW</span>
-                  </div>
-                </button>
-                <div *ngIf="nextVideoIndex > i" class="text-center text-muted text-sm">VIEWED:
+              <button *ngIf="nextVideoIndex === i" class="cardBtnBottom btn btn-block btn-primary text-center" (click)="handleWatchVideo()">
+                <div [ngSwitch]="item.contenttypeid">
+                  <span *ngSwitchCase="contentType.Video">WATCH NOW</span>
+                  <span *ngSwitchCase="contentType.PDF_Document">VIEW NOW</span>
+                </div>
+                <div *ngIf="nextVideoIndex > i" class="text-center mt-1 text-muted text-sm">VIEWED:
                   {{getFormattedDate(item.lastRead)}}</div>
-              </div>
+              </button>
+              <!-- <div class="card-footer text-center">
+              </div> -->
             </div>
           </div>
 

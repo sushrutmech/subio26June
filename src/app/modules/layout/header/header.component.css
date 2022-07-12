@@ -1,6 +1,8 @@
 .navbar{
-    height: 150px;
+    height: 122px;
     background: #F8F9FA !important;
+    display: block !important;
+    padding: 0px !important;
 }
 
 .logo{

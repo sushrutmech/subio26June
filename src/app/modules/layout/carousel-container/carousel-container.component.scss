@@ -1,4 +1,43 @@
 /* sarfaraz starting */
+.card .card-header{
+    border-bottom: none !important;
+}
+.cardDescDiv{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin-top: 14px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .card-body .card-title {
+    margin-bottom: 0px !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 120% !important;
+    color: #0198E0 !important;
+    text-align: left;
+  }
+  .cardBtnBottom{
+  background: #0198E0;
+    border-radius: 4px;
+    padding: 7px 13px;
+    font-weight: 400;
+    font-size: 16px;
+    width: 161px;
+    height: 38px;
+    line-height: 150%;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .carouselCardDiv .card-body {
+    flex: 0 0 auto !important;
+}
 
 .container2 {
     max-width: 1496px !important;

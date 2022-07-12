@@ -191,13 +191,13 @@
                         </div>
 
                         <div>
-                          <p>{{item.contentBlurb}}</p>
+                          <p class="cardDescDiv">{{item.contentBlurb}}</p>
                         </div>
 
-                        <div class="" (click)="handleWatchVideo(item)">
-                          <button type="button" class="btn btn-primary" *ngIf="item.contentTypeName=='Video'">watch
+                        <div style="text-align: center;"  (click)="handleWatchVideo(item)">
+                          <button type="button" class="cardBtnBottom btn btn-primary" *ngIf="item.contentTypeName=='Video'">watch
                             now</button>
-                          <button type="button" class="btn btn-primary"
+                          <button type="button" class="cardBtnBottom btn btn-primary"
                             *ngIf="item.contentTypeName== 'PDF Document'">Read Now</button>
 
                         </div>

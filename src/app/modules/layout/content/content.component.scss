@@ -89,7 +89,7 @@
 
 .child2 {
     position: relative;
-    padding: 0px 8px;
+    padding: 0px 33px;
 }
 
 .heading {
@@ -103,8 +103,8 @@
 }
 
 .para {
-    margin-bottom: 4px;
-
+    margin-bottom: 20px;
+    margin-top: 9px;
 
     /* Heading/H4 */
 
@@ -146,7 +146,7 @@
     width: 77px;
     height: 31px;
   
-
+    margin-top: 16px;
     /* Theme/Light */
 
     background: #f8f9fa;
@@ -192,14 +192,14 @@
     /* or 29px */
 
     text-align: center;
-
+  margin-top: 6px;
     color: #ffffff;
 }
 
 .coachHeading {
 
     height: 21px;
-
+  margin-top: 6px;
 
     /* _Components/Progress/Label */
 
@@ -323,7 +323,15 @@
 .carouselDataContainer {
     padding: 16px;
 }
-
+.d1{
+  border-radius: 8px 0px 0px 8px;
+}
+.d2{
+  border-radius: 0px;
+}
+.d3{
+  border-radius: 0px 8px 8px 0px;
+}
 
 
 .statusBar {
@@ -345,6 +353,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2px;
 }
 
 .timerContainer {
@@ -447,7 +456,7 @@
         top: 12px;
         left: 35px;
         position: absolute;
-        background-image: url(../../../../assets/images/home.png);
+        background-image: url(../../../../assets/images/HOMEG.svg);
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -459,36 +468,59 @@
         top: 12px;
         left: 35px;
         position: absolute;
-        background-image: url(../../../../assets/images/homeA.svg) !important;
+        background-image: url(../../../../assets/images/HOMEB.svg) !important;
         background-repeat: no-repeat;
         background-position: center;
     }
+
+    .mat-tab-label .goalLabel::before{
+      content: "";
+      height: 24px;
+      width: 24px;
+      top: 12px;
+      left: 22px;
+      position: absolute;
+      background-image: url(../../../../assets/images/GOALG.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
 
     .mat-tab-label-active .goalLabel::before{
         content: "";
         height: 24px;
         width: 24px;
         top: 12px;
-        left: 22;
+        left: 22px;
         position: absolute;
-        background-image: url(../../../../assets/images/goalA.png);
+        background-image: url(../../../../assets/images/GOALB.svg);
         background-repeat: no-repeat;
         background-position: center;
     }
 
-        .mat-tab-label-active .libraryLabel::before{
+        .mat-tab-label .libraryLabel::before{
             content: "";
             height: 24px;
             width: 24px;
             top: 12px;
             left: 22px;
             position: absolute;
-            background-image: url(../../../../assets/images/libA.jpg);
+            background-image: url(../../../../assets/images/Libg.svg);
             background-repeat: no-repeat;
             background-position: center;
         }
         
-
+        .mat-tab-label-active .libraryLabel::before{
+          content: "";
+          height: 24px;
+          width: 24px;
+          top: 12px;
+          left: 22px;
+          position: absolute;
+          background-image: url(../../../../assets/images/LIBTARYB.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+      }
     // .mat-tab-label .homeLabel::before{
     //     content: "";
     //     height: 24px;
@@ -512,6 +544,7 @@
   
   .card{
     border-radius: 0px !important;
+    margin-top: 24px;
   }
   .pastVcard{
     justify-content: center;
@@ -539,8 +572,9 @@
   
   .library-card {
     border-radius: 1.5rem;
-    box-shadow: 0px 4px 5px 0px rgb(0 0 0 / 30%);
     min-height: calc(100% - 1.5rem);
+    height: 474px !important;
+
   }
   
   .custom-rating-star {
@@ -620,10 +654,39 @@
   
   .suggested-image {
     width: 100%;
-    height: 130px;
+    height: 210px;
     max-width: 100%;
   }
-  
+  .cardDescDiv{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin-top: 14px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .card-body .card-title {
+    margin-bottom: 0px !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 120% !important;
+    color: #0198E0 !important;
+    text-align: left;
+}
+.cardBtnBottom{
+  background: #0198E0;
+    border-radius: 4px;
+    padding: 7px 13px;
+    font-weight: 400;
+    font-size: 16px;
+    width: 161px;
+    height: 38px;
+    line-height: 150%;
+}
   .h-90px {
     height: 90px;
   }
