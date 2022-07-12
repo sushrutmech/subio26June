@@ -6,13 +6,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     margin-top: 14px;
     font-style: italic;
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
+    height: 88px;
   }
   .card-body .card-title {
     margin-bottom: 0px !important;

@@ -245,12 +245,15 @@
 }
 
 .goalContainer mat-card.mat-card.mat-focus-indicator.ng-star-inserted {
-    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
-        0px 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
     border: 1px solid rgba(0, 0, 0, 0.125);
     margin-top: 16px !important;
 }
-
+.goalContainer mat-card.mat-card.mat-focus-indicator.ng-star-inserted:hover {
+  box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0px 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-top: 16px !important;
+}
 .titleCard {
     background: #c29ffa;
     border-radius: 4px;
@@ -286,8 +289,11 @@
     line-height: 150%;
     padding: 0px 8px;
     height: 21px;
+    margin-left: 13px;
 }
-
+.goal-item > span {
+  color: #000;
+}
 .cardGap {
     gap: 36px;
     padding: 16px;
@@ -678,13 +684,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     margin-top: 14px;
     font-style: italic;
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
+    height: 88px;
   }
   .card-body .card-title {
     margin-bottom: 0px !important;
