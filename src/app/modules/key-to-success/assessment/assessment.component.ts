@@ -29,6 +29,8 @@ export class AssessmentComponent implements OnInit {
   ngOnInit(): void {
     this.checkUrlAndData();
     this.getQuestionList();
+    console.log("**++--" ,  this.myKeysToSuccessService.getGoalDetailsByID(this.selectedSuccessGoalId).subscribe(
+      result => {console.log(result) }))
   }
 
   checkUrlAndData() {

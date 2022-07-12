@@ -4,9 +4,18 @@
       <div class="imgDetailDivasses">
         <div class="d-flex">
           <div class="mr-4" *ngIf="selectedSuccessGoal?.icon">
-            <div class="goal-icon-container">
+            <div class="goal-icon-container" *ngIf="selectedSuccessGoal.successGoalTypeId==3">
               <img  src="../../../../assets/images/gAsses.svg">
             </div>
+            <div class="goal-icon-container" *ngIf="selectedSuccessGoal.successGoalTypeId==1">
+              <img  src="../../../../assets/images/PERSONAL GOAL.png">
+            </div>
+            <div class="goal-icon-container" *ngIf="selectedSuccessGoal.successGoalTypeId==2">
+              <img  src="../../../../assets/images/BUSINESS GOAL.png">
+            </div>
+
+
+            
           </div>
           <div class="titleDL">
             <span class="font-xs">SUCCESS GOAL</span>
