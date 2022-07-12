@@ -110,15 +110,9 @@
                     <mat-card *ngFor="let item of successGoalList">
 
                       <div class="row">
-                        <div class="col-8">
-                          <div class="goal-header">
-                            <span>Success Goal</span>
-                          </div>
-                        </div>
+                        
                         <div class="col-4">
-                          <div class="goal-header">
-                            <span>Last assessment</span>
-                          </div>
+                          
                         </div>
                       </div>
                       <div class="row" >
@@ -141,16 +135,11 @@
                           <div class="col-8">
                             <div class="goal-item d-flex align-items-top" [class.active]="item === selectedSuccessGoal"
                               (click)="setSuccessGoal(item)">
-                              <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" />
+                              <!-- <img [src]="item.icon | appImage" *ngIf="item.icon" class="mr-1" /> -->
                               <span>{{item.goal}}</span>
                             </div>
                           </div>
-                          <div class="col-4">
-                            <div class="goal-item-value" [class.active]="item === selectedSuccessGoal"
-                              (click)="setSuccessGoal(item)">
-                              <span>{{item.dateTakenDescription}}</span>
-                            </div>
-                          </div>
+                          
                         </mat-card-subtitle>
                       </div>
 
@@ -163,7 +152,7 @@
 
 
 
-              <mat-tab label="MyGoals">
+              <mat-tab label="My Goals">
 
                 <mat-card  *ngFor="let item of MyGoalList">
 
@@ -188,7 +177,7 @@
                         {{item.goal}}
                       </div>
 
-                      <div> {{item.goalDescription}}</div>
+                      <!-- <div> {{item.goalDescription}}</div> -->
                       
                     </mat-card-subtitle>
 
@@ -222,7 +211,7 @@
                         {{item.goal}}
                       </div>
 
-                      <div> {{item.goalDescription}}</div>
+                      <!-- <div> {{item.goalDescription}}</div> -->
                   
                     </mat-card-subtitle>
 
@@ -233,7 +222,7 @@
               </mat-tab>
 
 
-              <mat-tab label="My BusinessGoals">
+              <mat-tab label="My Business Goals">
                 <mat-card *ngFor="let item of BusinessGoalList">
 
                   <div class="businessGoalList">
@@ -256,7 +245,7 @@
                         {{item.goal}}
                       </div>
 
-                      <div> {{item.goalDescription}}</div>
+                      <!-- <div> {{item.goalDescription}}</div> -->
                       
                     </mat-card-subtitle>
 
@@ -455,8 +444,21 @@
                                 <star-rating [value]="item.avgRating" [totalstars]="getRoundedValue(item.avgRating)"
                                   checkedcolor="rgb(255,192,0)" uncheckedcolor="white" size="24px" [readonly]="true">
                                 </star-rating>
-                                <span class="ml-1 mt-1" *ngIf="item.avgRating>0">{{item.avgRating}}</span>
+                                <!-- <span class="ml-1 mt-1" *ngIf="item.avgRating>0">{{item.avgRating}}</span> -->
                               </div>
+
+                              <div>
+                                <p>{{item.contentBlurb}}</p>
+                              </div>
+
+                              <div class="" (click)="handleWatchVideoo(item)">
+                                <button type="button" class="btn btn-primary"
+                                *ngIf="item.contentTypeName=='Video'">watch now</button>
+                                <button type="button" class="btn btn-primary"
+                                *ngIf="item.contentTypeName== 'PDF Document'">Read Now</button>
+                                
+                              </div>
+                              
                             </div>
                           </div>
                         </div>
