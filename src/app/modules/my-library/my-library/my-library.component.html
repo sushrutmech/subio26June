@@ -7,17 +7,16 @@
             </div>
 
             <div class="row  mb-3">
-                <div class="col-sm-12 mb-3">
+                <div class="col-sm-12 mb-5">
                     <form [formGroup]="searchForm" (ngSubmit)="searchTerm()">
                         <div class="d-sm-flex align-items-center d-block">
-                            <div class="col-lg-8 col-sm-6 d-flex align-items-center pl-0">
+                            <div class="col-4 d-flex align-items-center pl-0">
 
                                 <input type="text" class="form-control" id="validationTooltipUsername"
                                     placeholder="Search" formControlName="searchInput" name="searchInput">
                                 <button type="submit" class="input-group-prepend btn p-0 bg-white search-btn">
                                     <span class="input-group-text fa fa-search bg-transparent border-0"
                                         id="validationTooltipUsernamePrepend"></span>
-
                                 </button>
 
                             </div>
@@ -31,7 +30,7 @@
                                 <!-- <input type="checkbox" class="custom-switch custom-control-input" name="excludeSwitch"
                                     formControlName="excludeSwitch" id="excludeSwitch" (change)="searchTerm()"> -->
 
-                                <label class="custom-control-label mt-sm-0 mt-2" for="excludeSwitch">Exclude articles
+                                <label style="margin-left: 18px;" class="custom-control-label mt-sm-0 mt-2" for="excludeSwitch">Exclude articles
                                     already viewed</label>
                             </div>
                         </div>

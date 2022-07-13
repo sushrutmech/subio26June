@@ -153,7 +153,9 @@ background: #0198E0;
 }
 
 .custom-switch.exclude-switch {
-  padding-left: 3.25rem !important;
+  display: flex;
+    align-items: center;
+    padding-left: 50px;
 }
 
 .switch-label {

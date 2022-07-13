@@ -209,13 +209,16 @@
 
 ::ng-deep{
 
-  .goalContainer .mat-tab-header {
-    margin-top: 0px !important;
-}
-.goalContainer .mat-tab-label-active{
-    box-shadow: unset;
-    border-radius: none;
-    background: unset;
-    color: black;
-}
+    .goalContainer .mat-tab-header {
+        margin-top: 0px !important;
+    }
+    .goalContainer .mat-tab-label-active{
+        box-shadow: unset;
+        border-radius: none;
+        background: unset;
+    }
+
+    .goalContainer .mat-ink-bar{
+        background: #0198E0  !important;
+    }
 }

@@ -723,9 +723,7 @@
     height: 350px;
   }
   
-  .h-310px {
-    height: 310px;
-  }
+ 
   
   .custom-switch.exclude-switch {
     padding-left: 3.25rem !important;
@@ -819,9 +817,7 @@
     min-height: 130px;
   }
   
-  .h-310px {
-    height: 310px;
-  }
+ 
   
   .line-clamp {
     display: -webkit-box;
@@ -931,3 +927,9 @@
     flex-wrap: wrap;
     gap: 30px;
   }
+
+  ::ng-deep{
+    .mat-tab-group.mat-primary .mat-ink-bar{
+      background: transparent ;
+    }
+  } 
