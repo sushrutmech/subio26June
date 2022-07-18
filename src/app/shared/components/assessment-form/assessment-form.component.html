@@ -38,7 +38,7 @@
       <div class="d-flex h-100 overflow-hidden">
         <div class="container ratingAssesDiv" [@listAnimation]="currentPage">
           <div class="row ratingAssesChild" (keypress)="eventHandler($event, question)"
-            *ngFor="let question of questionList | paginate: { itemsPerPage: 5, currentPage: currentPage }">
+            *ngFor="let question of questionList | paginate: { itemsPerPage: 10, currentPage: currentPage }">
             <div class="col-md-6 py-3">
               <div class="d-flex align-items-center h-100">
                 <span class="font-xl">{{question.questionText}}</span>

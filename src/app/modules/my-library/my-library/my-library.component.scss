@@ -359,3 +359,22 @@ input:checked + .slider:before {
 .my-libraryContainer{
    padding: 32PX;
 }
+
+.dispNone{
+ display: none;
+}
+
+.searchClassContainer{
+
+   gap: 16px !important;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.searchCard{
+
+   width: 23% !important;
+    padding: 0px !important;
+    flex: 24%;
+}

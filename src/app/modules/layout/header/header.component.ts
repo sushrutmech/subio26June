@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
   
 
   onPressSignOut(){
-    alert("sing out call ")
+    //alert("sing out call ")
     this.AuthService.logout()
     this.router.navigate(['/login'])
     location.reload()

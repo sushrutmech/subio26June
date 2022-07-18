@@ -54,8 +54,8 @@ export class AssessmentFormComponent implements OnInit {
   }
 
   get questionText() {
-    var sliceCount = this.assessmentData.questionList.slice((this.currentPage - 1) * 5, this.currentPage * 5).length;
-    var currentFirstCount = (this.currentPage - 1) * 5;
+    var sliceCount = this.assessmentData.questionList.slice((this.currentPage - 1) * 10, this.currentPage * 10).length;
+    var currentFirstCount = (this.currentPage - 1) * 10;
     return `${currentFirstCount + 1} to ${currentFirstCount + sliceCount}`;
   }
 
@@ -63,7 +63,7 @@ export class AssessmentFormComponent implements OnInit {
     if (changes.assessmentData && changes.assessmentData.currentValue) {
       this.assessmentData = changes.assessmentData.currentValue;
       this.questionList = this.assessmentData.questionList;
-      this.totalPages = Math.ceil(this.questionList.length / 5);
+      this.totalPages = Math.ceil(this.questionList.length / 10);
       this.formParams.answerList = this.questionList.map(x => {
         return {
           assessmentQuestionId: x.assessmentQuestionID,
@@ -147,7 +147,7 @@ export class AssessmentFormComponent implements OnInit {
   handleClickOnQuestion(question: QuestionList) {
     if (this.isLastPage && question.thisOrderNo === this.questionList.length) {
       this.onFinishClick();
-    } else if (question.thisOrderNo % 5 === 0) {
+    } else if (question.thisOrderNo % 10 === 0) {
       this.onNextClick();
     }
   }
@@ -174,7 +174,7 @@ export class AssessmentFormComponent implements OnInit {
   }
 
   isValidateCurrentQuestions() {
-    var questions = this.assessmentData.questionList.slice((this.currentPage - 1) * 5, this.currentPage * 5);
+    var questions = this.assessmentData.questionList.slice((this.currentPage - 1) * 10, this.currentPage * 10);
     return !questions.some(x => (x.selectedValue === undefined));
   }
 
@@ -203,7 +203,7 @@ export class AssessmentFormComponent implements OnInit {
   }
 
   sendPercentage() {
-    var newPrecentage = Math.round(((this.currentPage - 1) * 100) / Math.ceil(this.questionList.length / 5));
+    var newPrecentage = Math.round(((this.currentPage - 1) * 100) / Math.ceil(this.questionList.length / 10));
     if (this.precentage < newPrecentage) {
       this.precentage = newPrecentage;
       this.progressChange.emit(this.precentage);

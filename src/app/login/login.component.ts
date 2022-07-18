@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
 
       this.authService.login(params).subscribe({
         next: (res: any) => {
-          alert("lonin sucessfully....")
+          //alert("lonin sucessfully....")
           this.spinner.hide();
           this.resData=res
           this.router.navigate([this.returnUrl]);
